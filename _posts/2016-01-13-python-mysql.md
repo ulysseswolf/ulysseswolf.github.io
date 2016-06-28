@@ -7,6 +7,8 @@ categories:
 - web
 tags: [python]
 ---
+{{ page.title }}
+================
 
 　　爬虫抓到的数据需要存储到MySQL中，所以我们需要熟悉下使用Python操作MySQL数据库。首先你的机器上要安装MySQLdb，MySQLdb是用于Python连接Mysql数据库的接口，它实现了Python数据库 API规范V2.0，是基于MySQL C API上建立的。通过`import MySQLdb`语句查看是否安装MySQLdb。    
 #1 连接数据库

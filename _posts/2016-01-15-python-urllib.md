@@ -7,6 +7,8 @@ categories:
 - web
 tags: [python]
 ---
+{{ page.title }}
+================
 
 If you want to obtain the contents of a web page into a variable, just read the response of 
 `urllib.request.urlopen`
