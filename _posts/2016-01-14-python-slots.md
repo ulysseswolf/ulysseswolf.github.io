@@ -35,6 +35,6 @@ AttributeError: 'User' object has no attribute '_title'
 TypeError: vars() argument must have __dict__ attribute
 {% endhighlight %}
 
-18虽然没有__dict__，但依然可以用dir()和inspect.getmember()获取实例成员信息。
+虽然没有__dict__，但依然可以用dir()和inspect.getmember()获取实例成员信息。
 
 派生类必须用__slots__为新增的字段分配存储空间（即使__slots__ = []），否则会更慢。
