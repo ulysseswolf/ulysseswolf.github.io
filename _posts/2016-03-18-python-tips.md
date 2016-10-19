@@ -8,9 +8,9 @@ tags: [python]
 ---
 {{ page.title }}
 ================
-如何将字段转换成一个object，然后使用对象-属性的方式读取
-1 使用namedtuple
 {% highlight python %}
+如何将字段转换成一个object，然后使用对象-属性的方式读取   
+1 使用namedtuple
 >>> import collections
 >>> MyStruct = collections.namedtuple('mystruct', 'a b c')
 >>> m = MyStruct(a=1, b={'c': 2}, c=['hi'])
