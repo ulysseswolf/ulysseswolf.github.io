@@ -52,4 +52,8 @@ result = a()
 or:
 result = getattr(foo, 'bar')()
 
+正则匹配多行文本
+点(.)不能匹配换行符
+re.compile() 函数接受一个标志参数叫 re.DOTALL ，它可以让正则表达式中的点(.)匹配包括换行符在内的任意字符
+
 {% endhighlight %}
