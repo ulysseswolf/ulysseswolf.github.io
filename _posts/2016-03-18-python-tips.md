@@ -26,6 +26,12 @@ if isinstance(value, six.text_type):
     value = value.encode(encoding='utf-8')
 mymac = hmac.new(value)
 
+在 Python 3 中，很多内置函数被修改成了只返成迭代器 Iterator：
+map()
+filter()
+dict.items()
+迭代器有诸多好处，最大的好处就是，使用迭代器不需要一次性分配大量内存，所以它的内存效率比较高。
+但是迭代器有一个天然的特点，当你对某个迭代器做了一次迭代，访问完它的内容后，就没法再次访问那些内容了。迭代器中的所有内容都只能被访问一次。
 
 如何将字段转换成一个object，然后使用对象-属性的方式读取   
 1 使用namedtuple
