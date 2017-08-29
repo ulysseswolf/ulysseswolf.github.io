@@ -2,7 +2,7 @@
 layout: post
 title: "Ruby singleton"
 description: ""
-categories:    
+categories:
 - ruby
 tags: [ruby]
 ---
@@ -31,6 +31,7 @@ class Logger
     end
 end
 {% endhighlight %}
+
 通过这个类来打印日志，只需要控制LEVEL的级别，就可以自由地控制打印的内容。比如 现在项目处于开发阶段，就将LEVEL设置为DEBUG，这样所有的日志信息都会被打印。而项目如果上线了 ，可以把LEVEL设置为INFO，这样就只能看到INFO及以上级别的日志打印。如果你只想看到错误日志， 就可以把LEVEL设置为ERROR。而如果你开发的项目是客户端版本，不想让任何日志打印出来，可以将 LEVEL设置为NOTHING。打印的时候只需要调用：
 
 logger = Logger.new
@@ -69,6 +70,7 @@ class Logger
     end
 end
 {% endhighlight %}
+
 首先使用private_class_method将Logger的new方法私有化，这样就无法通过new方法创建 Logger的实例了。然后使用一个静态变量@@instance来保存实例，并提供一个公有的instance方法用于 获取Logger的实例，在这个方法里面判断如果@@instance为nil，就new出一个新的Logger实例，否则就 直接返回@@instance。这样就可以保证内存当中只会存在一个Logger的实例了。这时打 印日志的代码需要改成如下方式：
 
 logger = Logger.instance  
