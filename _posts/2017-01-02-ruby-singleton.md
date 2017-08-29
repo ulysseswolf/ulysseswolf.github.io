@@ -9,7 +9,7 @@ tags: [ruby]
 {{ page.title }}
 ================
 
-{% hightlight python%}
+{% highlight python%}
 class Logger  
     DEBUG = 0
     INFO = 1
@@ -40,7 +40,7 @@ logger.debug("Hello World")
 
 虽然这个工具好用，可是打印这种事情是不区分对象的，这里每次 需要打印日志的时候都需要new出一个新的Logger，太占用内存了，可以将这个工具改成用单例 模式实现。
 
-{% hightlight python%}
+{% highlight python%}
 class Logger  
     private_class_method :new
           
@@ -78,7 +78,7 @@ logger.debug("Hello World")
 
 在ruby上还有更简单的实现方式。
 
-{% hightlight python%}
+{% highlight python%}
 require 'singleton'
 class Logger  
     include Singleton  
