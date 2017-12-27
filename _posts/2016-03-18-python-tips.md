@@ -92,4 +92,7 @@ path = "..\MyProj\MyFile.txt"
 print os.path.abspath(path)
 #D:\MyProj\MyFile.txt
 
+# setup file sharing
+python3 -m http.server
+
 {% endhighlight %}
