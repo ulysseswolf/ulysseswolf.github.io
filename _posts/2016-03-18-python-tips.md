@@ -95,4 +95,24 @@ print os.path.abspath(path)
 # setup file sharing
 python3 -m http.server
 
+# Reverse While Iterating In A Loop.
+for element in reversed([1,3,5]): print(element)
+
+# Reverse A String In Line.
+"Test Python"[::-1]
+
+# Reverse A List Using Slicing.
+[1, 3, 5][::-1]
+
+# Find The Most Frequent Value In A List.
+test = [1,2,3,4,2,2,3,1,4,4,4]
+print(max(set(test), key=test.count))
+#-> 4
+
+# Lambda To Imitate Print Function.
+import sys
+lprint=lambda *args:sys.stdout.write(" ".join(map(str,args)))
+lprint("python", "tips",1000,1001)
+#-> python tips 1000 1001
+
 {% endhighlight %}
