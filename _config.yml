@@ -1,66 +1,43 @@
-# Site configuration
-# 1. Files excluded from Jekyll builds
-# 2. Installed Gems
-# 3. Gem settings
-# 4. Jekyll settings
-# 5. Collections
-# 6. Jekyll collections settings
-# 7. Site settings
+# Site wide configuration
 
-# 1. Files excluded from Jekyll builds
-exclude:
-- README.md
-- CODE_OF_CONDUCT.md
-- CONTRIBUTING.md
-- screenshot.png
-- LICENSE
-- CNAME
-- Gemfile
-- Gemfile.lock
-- garth-jekyll-theme.gemspec
+title: Ulysses
+locale: en_US
+description: Describe your website here.
+logo: site-logo.png
+search: true
+url: http://localhost:4000
 
-# 2. Installed Gems
-plugins:
-- jekyll-paginate
+# Jekyll configuration
 
-# 3. Gem settings
-paginate: 2 # jekyll-paginate > items per page
-paginate_path: page:num # jekyll-paginate > blog page
-
-# 4. Jekyll settings
+permalink:   /:categories/:title/
+markdown:    kramdown
+highlighter: rouge
 sass:
-  style: compressed # Style compression
-permalink: pretty  # Permalink style (/YYYY/MM/DD/page-name/)
-excerpt_separator: <!-- more --> # Marks end of excerpt in posts
-timezone: Europe/London # Timezone for blog posts and alike
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
 
-# 5. Collections
-collections:
-  posts:
-    title: Blog # Needed for Siteleaf
-    output: true
-    description: "This is just a demo, find out more [about Garth](about)" # The post list page content
+kramdown:
+  input: GFM
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..2
+  enable_coderay: false
 
-# 6. Jekyll collections settings
-defaults:
-  -
-    scope:
-      path: ""
-      type: pages
-    values:
-      layout: page # Default layout
-  -
-    scope:
-      path: ""
-      type: posts
-    values:
-      layout: post # Default layout
+mathjax: true
 
-# 7. Site settings
-encoding: utf-8 # Make sure the encoding is right
-title: "Garth" # Site name or title
-logo: "/assets/logo.svg" # Site logo
-description: "A stupidly simple theme for Jekyll, using the official Jekyll theme implementation" # Site description and default description
-url: "https://ulysseswolf.github.io" # Site url
-baseurl: ""
-lang: en-GB
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", ".less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
+
+
+# Site owner
+owner:
+  name: Ulysses
+  avatar: 
+  email: ulysseswolf@email.com
+  github: ulysseswolf
+ 
