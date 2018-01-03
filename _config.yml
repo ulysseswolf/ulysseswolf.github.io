@@ -1,68 +1,66 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# Site configuration
+# 1. Files excluded from Jekyll builds
+# 2. Installed Gems
+# 3. Gem settings
+# 4. Jekyll settings
+# 5. Collections
+# 6. Jekyll collections settings
+# 7. Site settings
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.author }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: whiteglass theme
-author: Yous
-description: Minimal, responsive Jekyll theme for hackers.
-baseurl: "/whiteglass" # the subpath of your site, e.g. /blog
-url: "https://ulysseswolf.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-lang: en
-timezone: UTC
+# 1. Files excluded from Jekyll builds
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - Rakefile
-  - README.md
-  - LICENSE.txt
-  - CHANGELOG.md
-  - jekyll-whiteglass.gemspec
-  - screenshot.png
-  - vendor
+- README.md
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- screenshot.png
+- LICENSE
+- CNAME
+- Gemfile
+- Gemfile.lock
+- garth-jekyll-theme.gemspec
 
-comments: false
-
-# Plugins
+# 2. Installed Gems
 plugins:
-  - jekyll-archives
-  - jekyll-paginate
-  - jekyll-sitemap
+- jekyll-paginate
 
-# Build settings
-markdown: kramdown
-excerpt_separator: "<!-- more -->"
+# 3. Gem settings
+paginate: 2 # jekyll-paginate > items per page
+paginate_path: page:num # jekyll-paginate > blog page
 
-# Outputting
-permalink: /:year/:month/:day/:title/
-paginate_path: /posts/:num/
-paginate: 5
+# 4. Jekyll settings
+sass:
+  style: compressed # Style compression
+permalink: pretty  # Permalink style (/YYYY/MM/DD/page-name/)
+excerpt_separator: <!-- more --> # Marks end of excerpt in posts
+timezone: Europe/London # Timezone for blog posts and alike
 
-# Markdown settings
-kramdown:
-  auto_ids: false
-  enable_coderay: false
-  entity_output: as_char
-  footnote_nr: 1
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  toc_levels: 1..6
+# 5. Collections
+collections:
+  posts:
+    title: Blog # Needed for Siteleaf
+    output: true
+    description: "This is just a demo, find out more [about Garth](about)" # The post list page content
 
-# jekyll-archives
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-  layout: category_archives
-  permalinks:
-    category: /categories/:name/
-    tag: /tags/:name/
+# 6. Jekyll collections settings
+defaults:
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: page # Default layout
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: post # Default layout
+
+# 7. Site settings
+encoding: utf-8 # Make sure the encoding is right
+title: "Garth" # Site name or title
+logo: "/assets/logo.svg" # Site logo
+description: "A stupidly simple theme for Jekyll, using the official Jekyll theme implementation" # Site description and default description
+url: "https://ulysseswolf.github.io" # Site url
+baseurl: ""
+lang: en-GB
