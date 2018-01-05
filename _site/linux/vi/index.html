@@ -1,0 +1,226 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>vi &#8211; Ulysses</title>
+<meta name="description" content="vi
+
+">
+<meta name="keywords" content="linux">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="vi">
+<meta name="twitter:description" content="vi
+
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/site-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vi">
+<meta property="og:description" content="vi
+
+">
+<meta property="og:url" content="http://localhost:4000/linux/vi/">
+<meta property="og:site_name" content="Ulysses">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/linux/vi/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Ulysses Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post">
+
+
+<header class="masthead">
+	<div class="wrap">
+
+      <h1 class="site-title animated fadeIn"><a href="http://localhost:4000/">Ulysses</a></h1>
+	</div>
+</header><!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://localhost:4000/tags/#linux" title="Pages tagged linux">linux</a></li>
+        </ul>
+        
+          <h1 class="entry-title">vi</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+        <span class="author vcard">By <span class="fn">Ulysses</span></span>
+        <span class="entry-date date published"><time datetime="2016-03-15T00:00:00+08:00"><i class="fa fa-calendar-o"></i> March 15, 2016</time></span>
+        
+        
+        
+        
+      </footer>
+      <div class="entry-content">
+        <h1 id="vi">vi</h1>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="p">:</span><span class="n">ls</span> <span class="err">：查看缓冲区</span>   
+<span class="p">:</span><span class="n">bN</span> <span class="err">：打开缓冲区</span><span class="n">N</span>   
+<span class="n">J</span> <span class="err">：合并行</span>   
+<span class="o">=</span> <span class="err">：格式化</span>   
+<span class="n">gg</span><span class="o">=</span><span class="n">G</span> <span class="err">：格式化全文</span>   
+<span class="p">:</span><span class="n">sh</span> <span class="err">：缓存当前文件并打开</span><span class="n">shell</span>   
+<span class="p">:</span><span class="n">w</span> <span class="err">!</span><span class="n">sudo</span> <span class="n">tee</span> <span class="o">%</span> <span class="err">：非</span><span class="n">root</span><span class="err">用户保存当前文件</span>   
+<span class="n">di</span><span class="p">[</span><span class="err">括号</span><span class="o">/</span><span class="err">引号</span><span class="p">]</span>   
+<span class="p">:</span><span class="mi">54</span>         <span class="n">Goto</span> <span class="n">line</span> <span class="mi">54</span> <span class="p">(</span><span class="o">=</span><span class="mi">54</span><span class="n">gg</span><span class="err">或</span><span class="mi">54</span><span class="n">G</span><span class="p">)</span>
+<span class="mi">100</span>  <span class="err">往後跳</span><span class="mi">100</span><span class="err">行</span> <span class="p">(</span><span class="o">=+</span><span class="err">或</span><span class="n">c</span><span class="o">-</span><span class="n">m</span><span class="p">)</span>
+<span class="mi">100</span><span class="o">-</span>        <span class="err">往前跳</span><span class="mi">100</span><span class="err">行</span>
+<span class="mi">40</span><span class="o">%</span>         <span class="err">跳到檔案</span><span class="mi">40</span><span class="o">%</span><span class="err">的地方</span>
+<span class="s">''</span>          <span class="err">回到上一個位置</span><span class="p">(</span><span class="err">雙引號那顆鍵按兩下</span><span class="p">)</span>
+<span class="n">R</span> <span class="err">连续替换</span>
+<span class="n">Shift</span><span class="o">+</span><span class="n">Insert</span> <span class="err">粘贴，系统剪切板</span>
+<span class="o">*</span> <span class="err">和</span> <span class="c">#    向後/前搜尋游標下的單字</span>
+
+<span class="p">:</span><span class="n">s</span><span class="o">/</span><span class="n">AAA</span><span class="o">/</span><span class="n">bbb</span><span class="o">/</span><span class="n">g</span>    <span class="err">將目前行的所有</span><span class="n">AAA</span><span class="err">換成</span><span class="n">bbb</span>
+<span class="p">:</span><span class="mi">12</span><span class="n">s</span><span class="o">/</span><span class="n">AAA</span><span class="o">/</span><span class="n">bbb</span><span class="o">/</span><span class="n">g</span>  <span class="err">將第</span><span class="mi">12</span><span class="err">行的所有</span><span class="n">AAA</span><span class="err">換成</span><span class="n">bbb</span>
+
+<span class="p">:</span><span class="n">ls</span>         <span class="nb">buffer</span><span class="err">列表</span><span class="p">(</span><span class="err">或</span><span class="p">:</span><span class="n">buffers</span> <span class="err">或</span><span class="p">:</span><span class="n">files</span><span class="p">)</span>
+<span class="n">c</span><span class="o">-^</span>         <span class="err">編輯前一個檔案</span> <span class="p">(</span><span class="o">=</span> <span class="p">:</span><span class="n">e</span><span class="c">#)</span>
+<span class="p">:</span><span class="n">bn</span>         <span class="nb">buffer</span> <span class="nb">next</span>
+<span class="p">:</span><span class="n">bl</span>         <span class="nb">buffer</span> <span class="n">last</span>
+
+<span class="err">单词大小写</span>
+<span class="n">g</span><span class="o">~</span><span class="n">iw</span>
+<span class="o">~</span> <span class="n">toggle</span> <span class="n">case</span><span class="p">;</span> <span class="n">alternatively</span> <span class="n">use</span> <span class="n">U</span> <span class="k">for</span> <span class="n">to</span><span class="o">-</span><span class="n">upper</span> <span class="ow">or</span> <span class="n">u</span> <span class="k">for</span> <span class="n">to</span><span class="o">-</span><span class="n">lower</span>
+<span class="n">iw</span> <span class="n">selects</span> <span class="n">the</span> <span class="n">Inner</span> <span class="n">Word</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">the</span> <span class="n">word</span> <span class="n">that</span> <span class="n">the</span> <span class="n">cursor</span> <span class="ow">is</span> <span class="n">on</span>
+
+<span class="err">使用分离模式打开</span> <span class="n">Vim</span> <span class="err">并比较两个文件的不同</span>   
+<span class="err">$</span> <span class="n">vimdiff</span> <span class="p">[</span><span class="err">文件</span><span class="mi">1</span><span class="p">]</span> <span class="p">[</span><span class="err">文件</span><span class="mi">2</span><span class="p">]</span>    
+
+<span class="err">缓冲区跳转</span>
+<span class="p">:</span><span class="n">n</span>   <span class="err">编辑下一个文件。</span>
+<span class="p">:</span><span class="mi">2</span><span class="n">n</span> <span class="err">编辑下二个文件。</span>
+<span class="p">:</span><span class="n">N</span>   <span class="err">编辑前一个文件。注意，这种用法只能用于</span> <span class="n">argument</span> <span class="nb">list</span> <span class="err">的情形。</span>
+<span class="p">:</span><span class="n">rew</span> <span class="err">回到首文件</span>
+<span class="p">:</span><span class="n">args</span> <span class="err">查看当前编辑缓冲文件状态</span>
+<span class="p">:</span><span class="n">e</span><span class="c"># 或 Ctrl-^   编辑前一个档案，用于两文件互相编辑时相当好用。这种用法不管是 argument list 或buffer list 档案间皆可使用。 使用Ctrl－^ 命令更便捷，但如终端类型不正确该功能将无效。</span>
+<span class="err">用</span><span class="p">:</span><span class="n">ls</span><span class="err">来显示缓冲区中的文件，编号后边有</span><span class="c">#的代表是前一个文件，可以通过:e#来进入，有%a的代表是当前文件，什么也没有的可以通过:bn来进入，这里的n代表文件编号。</span>
+<span class="p">:</span><span class="n">b</span><span class="err">文件名或编号</span>   <span class="err">移至该文件。</span>
+<span class="err">在</span> <span class="p">:</span><span class="n">ls</span> <span class="err">中就会出示各文件的编号，这个编号在未离开</span> <span class="n">vim</span> <span class="err">前是不会变的。这个指令</span> <span class="n">elvis</span> <span class="err">也是可以使用。当然</span> <span class="p">:</span><span class="n">e</span><span class="c">#编号 也是可以的，这样的用法则是所有 vi clone 都通用了。</span>
+<span class="err">在</span> <span class="n">buffers</span> <span class="err">中，减号</span> <span class="o">-</span> <span class="err">表示这个</span> <span class="nb">buffer</span> <span class="err">并未载入，不过，不必担心，载入相当快速的。加号</span> <span class="o">+</span> <span class="err">表示这个</span> <span class="nb">buffer</span> <span class="err">已经修改过了。</span>
+<span class="p">:</span><span class="n">bn</span>   <span class="nb">buffer</span> <span class="nb">next</span><span class="err">。这里的</span><span class="n">n</span><span class="err">代表字母</span><span class="n">n</span>
+<span class="p">:</span><span class="n">bl</span>   <span class="nb">buffer</span> <span class="n">last</span><span class="err">。</span>
+
+<span class="err">关闭分屏</span>
+<span class="err">关闭当前窗口。</span>
+<span class="n">Ctrl</span><span class="o">+</span><span class="n">W</span> <span class="n">c</span>
+<span class="err">关闭当前窗口，如果只剩最后一个了，则退出</span><span class="n">Vim</span><span class="err">。</span>
+<span class="n">Ctrl</span><span class="o">+</span><span class="n">W</span> <span class="n">q</span>
+<span class="err">分屏</span>
+<span class="err">上下分割当前打开的文件。</span>
+<span class="n">Ctrl</span><span class="o">+</span><span class="n">W</span> <span class="n">s</span>
+<span class="err">上下分割，并打开一个新的文件。</span>
+<span class="p">:</span><span class="n">sp</span> <span class="n">filename</span>
+<span class="err">左右分割当前打开的文件。</span>
+<span class="n">Ctrl</span><span class="o">+</span><span class="n">W</span> <span class="n">v</span>
+<span class="err">左右分割，并打开一个新的文件。</span>
+<span class="p">:</span><span class="n">vsp</span> <span class="n">filename</span></code></pre></figure>
+
+<p>http://linux.chinaunix.net/techdoc/desktop/2009/07/06/1122020.shtml</p>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://localhost:4000/sql/sql/" class="btn" title="SQL">Previous</a>
+      
+      
+        <a href="http://localhost:4000/python/python-tor/" class="btn" title="python用requests+tor搭建轮换ip爬虫">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2018 Ulysses. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</span>
+<div class="social-icons">
+	<a href="https://github.com/ulysseswolf" title="Ulysses on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://localhost:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

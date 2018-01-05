@@ -1,0 +1,240 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Ruby singleton &#8211; Ulysses</title>
+<meta name="description" content="Ruby singleton
+
+">
+<meta name="keywords" content="ruby">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Ruby singleton">
+<meta name="twitter:description" content="Ruby singleton
+
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/site-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ruby singleton">
+<meta property="og:description" content="Ruby singleton
+
+">
+<meta property="og:url" content="http://localhost:4000/ruby/ruby-singleton/">
+<meta property="og:site_name" content="Ulysses">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/ruby/ruby-singleton/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Ulysses Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post">
+
+
+<header class="masthead">
+	<div class="wrap">
+
+      <h1 class="site-title animated fadeIn"><a href="http://localhost:4000/">Ulysses</a></h1>
+	</div>
+</header><!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://localhost:4000/tags/#ruby" title="Pages tagged ruby">ruby</a></li>
+        </ul>
+        
+          <h1 class="entry-title">Ruby singleton</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+        <span class="author vcard">By <span class="fn">Ulysses</span></span>
+        <span class="entry-date date published"><time datetime="2017-01-02T00:00:00+08:00"><i class="fa fa-calendar-o"></i> January 02, 2017</time></span>
+        
+        
+        
+        
+      </footer>
+      <div class="entry-content">
+        <h1 id="ruby-singleton">Ruby singleton</h1>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Logger</span>  
+    <span class="n">DEBUG</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">INFO</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">ERROR</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">NOTHING</span> <span class="o">=</span> <span class="mi">3</span>
+          
+    <span class="n">LEVEL</span> <span class="o">=</span> <span class="n">DEBUG</span>
+          
+    <span class="k">def</span> <span class="nf">debug</span> <span class="n">msg</span>  
+        <span class="n">puts</span> <span class="n">msg</span> <span class="k">if</span> <span class="n">DEBUG</span> <span class="o">&gt;=</span> <span class="n">LEVEL</span>
+    <span class="n">end</span>
+          
+    <span class="k">def</span> <span class="nf">info</span> <span class="n">msg</span>  
+        <span class="n">puts</span> <span class="n">msg</span> <span class="k">if</span> <span class="n">INFO</span> <span class="o">&gt;=</span> <span class="n">LEVEL</span>
+    <span class="n">end</span>
+          
+    <span class="k">def</span> <span class="nf">error</span> <span class="n">msg</span>  
+        <span class="n">puts</span> <span class="n">msg</span> <span class="k">if</span> <span class="n">ERROR</span> <span class="o">&gt;=</span> <span class="n">LEVEL</span>
+    <span class="n">end</span>
+<span class="n">end</span></code></pre></figure>
+
+<p>通过这个类来打印日志，只需要控制LEVEL的级别，就可以自由地控制打印的内容。比如 现在项目处于开发阶段，就将LEVEL设置为DEBUG，这样所有的日志信息都会被打印。而项目如果上线了 ，可以把LEVEL设置为INFO，这样就只能看到INFO及以上级别的日志打印。如果你只想看到错误日志， 就可以把LEVEL设置为ERROR。而如果你开发的项目是客户端版本，不想让任何日志打印出来，可以将 LEVEL设置为NOTHING。打印的时候只需要调用：</p>
+
+<p>logger = Logger.new
+logger.debug(“Hello World”)</p>
+
+<p>虽然这个工具好用，可是打印这种事情是不区分对象的，这里每次 需要打印日志的时候都需要new出一个新的Logger，太占用内存了，可以将这个工具改成用单例 模式实现。</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Logger</span>  
+    <span class="n">private_class_method</span> <span class="p">:</span><span class="n">new</span>
+          
+    <span class="n">DEBUG</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">INFO</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">ERROR</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">NOTHING</span> <span class="o">=</span> <span class="mi">3</span>
+          
+    <span class="n">LEVEL</span> <span class="o">=</span> <span class="n">DEBUG</span>
+          
+    <span class="err">@</span><span class="nd">@instance</span> <span class="o">=</span> <span class="n">nil</span>
+          
+    <span class="k">def</span> <span class="nf">debug</span> <span class="n">msg</span>  
+        <span class="n">puts</span> <span class="n">msg</span> <span class="k">if</span> <span class="n">DEBUG</span> <span class="o">&gt;=</span> <span class="n">LEVEL</span>
+    <span class="n">end</span>
+          
+    <span class="k">def</span> <span class="nf">info</span> <span class="n">msg</span>  
+        <span class="n">puts</span> <span class="n">msg</span> <span class="k">if</span> <span class="n">INFO</span> <span class="o">&gt;=</span> <span class="n">LEVEL</span>
+    <span class="n">end</span>
+          
+    <span class="k">def</span> <span class="nf">error</span> <span class="n">msg</span>  
+        <span class="n">puts</span> <span class="n">msg</span> <span class="k">if</span> <span class="n">ERROR</span> <span class="o">&gt;=</span> <span class="n">LEVEL</span>
+    <span class="n">end</span>
+          
+    <span class="k">def</span> <span class="nf">self</span><span class="o">.</span><span class="n">instance</span>  
+        <span class="err">@</span><span class="nd">@instance</span> <span class="o">=</span> <span class="n">new</span> <span class="n">unless</span> <span class="err">@</span><span class="nd">@instance</span>
+    <span class="n">end</span>
+<span class="n">end</span></code></pre></figure>
+
+<p>首先使用private_class_method将Logger的new方法私有化，这样就无法通过new方法创建 Logger的实例了。然后使用一个静态变量@@instance来保存实例，并提供一个公有的instance方法用于 获取Logger的实例，在这个方法里面判断如果@@instance为nil，就new出一个新的Logger实例，否则就 直接返回@@instance。这样就可以保证内存当中只会存在一个Logger的实例了。这时打 印日志的代码需要改成如下方式：</p>
+
+<p>logger = Logger.instance<br />
+logger.debug(“Hello World”)</p>
+
+<p>在ruby上还有更简单的实现方式。</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">require</span> <span class="s">'singleton'</span>
+<span class="k">class</span> <span class="nc">Logger</span>  
+    <span class="n">include</span> <span class="n">Singleton</span>  
+          
+    <span class="c">#省略剩余代码  </span>
+<span class="n">end</span></code></pre></figure>
+
+<p>首先从系统配置路径中引入singleton.rb这个文件，然后在Logger类里引入Singleton这 个模块。<br />
+ruby有一个模块 (module)机制，在类里引入模块后，该类可以访问模块中的定义的方法。
+instance方法就是定义在 Singleton这个模块里面的，然后在运行时将这个模块引入，Logger类就可以访问Singleton中的 instance方法了。</p>
+
+<p>单例：保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://localhost:4000/python/pip/" class="btn" title="pip">Previous</a>
+      
+      
+        <a href="http://localhost:4000/python/uniq-id/" class="btn" title="全局唯一ID设计">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2018 Ulysses. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</span>
+<div class="social-icons">
+	<a href="https://github.com/ulysseswolf" title="Ulysses on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://localhost:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

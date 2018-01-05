@@ -1,0 +1,179 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>mongodb clear duplicate data &#8211; Ulysses</title>
+<meta name="description" content="mongodb clear duplicate data
+
+">
+<meta name="keywords" content="mongodb">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="mongodb clear duplicate data">
+<meta name="twitter:description" content="mongodb clear duplicate data
+
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/site-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mongodb clear duplicate data">
+<meta property="og:description" content="mongodb clear duplicate data
+
+">
+<meta property="og:url" content="http://localhost:4000/mongodb/mongodb/">
+<meta property="og:site_name" content="Ulysses">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/mongodb/mongodb/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Ulysses Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post">
+
+
+<header class="masthead">
+	<div class="wrap">
+
+      <h1 class="site-title animated fadeIn"><a href="http://localhost:4000/">Ulysses</a></h1>
+	</div>
+</header><!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://localhost:4000/tags/#mongodb" title="Pages tagged mongodb">mongodb</a></li>
+        </ul>
+        
+          <h1 class="entry-title">mongodb clear duplicate data</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+        <span class="author vcard">By <span class="fn">Ulysses</span></span>
+        <span class="entry-date date published"><time datetime="2017-02-11T00:00:00+08:00"><i class="fa fa-calendar-o"></i> February 11, 2017</time></span>
+        
+        
+        
+        
+      </footer>
+      <div class="entry-content">
+        <h1 id="mongodb-clear-duplicate-data">mongodb clear duplicate data</h1>
+
+<p>1.将数据导出json格式<br />
+./mongoexport -d liuniu -c collection.json</p>
+
+<p>-d 数据库名</p>
+
+<p>-c 集合名</p>
+
+<p>-o 导出后的名字(也可以加上路径 )</p>
+
+<p>2.删除当前集合的数据<br />
+db.collection.remove({})<br />
+3.新建唯一索引<br />
+db.collection.createIndex({“msg.MsgId”:1},{unique:true});<br />
+4.导入刚才导出的数据<br />
+./mongoimport -d liuniu -c collection.json<br />
+upsert会根据唯一索引去重复</p>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://localhost:4000/python/uniq-id/" class="btn" title="全局唯一ID设计">Previous</a>
+      
+      
+        <a href="http://localhost:4000/answers-0/" class="btn" title="answers 0">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2018 Ulysses. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</span>
+<div class="social-icons">
+	<a href="https://github.com/ulysseswolf" title="Ulysses on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://localhost:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

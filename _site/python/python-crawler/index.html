@@ -1,0 +1,271 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>python crawler demo &#8211; Ulysses</title>
+<meta name="description" content="python crawler demo
+
+">
+<meta name="keywords" content="python">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="python crawler demo">
+<meta name="twitter:description" content="python crawler demo
+
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/site-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python crawler demo">
+<meta property="og:description" content="python crawler demo
+
+">
+<meta property="og:url" content="http://localhost:4000/python/python-crawler/">
+<meta property="og:site_name" content="Ulysses">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/python/python-crawler/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Ulysses Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post">
+
+
+<header class="masthead">
+	<div class="wrap">
+
+      <h1 class="site-title animated fadeIn"><a href="http://localhost:4000/">Ulysses</a></h1>
+	</div>
+</header><!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://localhost:4000/tags/#python" title="Pages tagged python">python</a></li>
+        </ul>
+        
+          <h1 class="entry-title">python crawler demo</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+        <span class="author vcard">By <span class="fn">Ulysses</span></span>
+        <span class="entry-date date published"><time datetime="2016-10-01T00:00:00+08:00"><i class="fa fa-calendar-o"></i> October 01, 2016</time></span>
+        
+        
+        
+        
+      </footer>
+      <div class="entry-content">
+        <h1 id="python-crawler-demo">python crawler demo</h1>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="k">class</span> <span class="nc">JDong</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="s">"""搜索
+        """</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s">'https://search.jd.com/Search?keyword={}&amp;enc=utf-8&amp;page={}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">page</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+        <span class="n">goodslist</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">'//*[@id="J_goodsList"]/ul/li'</span><span class="p">)</span>
+        <span class="n">relist</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">goods</span> <span class="ow">in</span> <span class="n">goodslist</span><span class="p">:</span>
+            <span class="n">link</span> <span class="o">=</span> <span class="n">goods</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">'div/div[1]/a/@href'</span><span class="p">)</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="n">goods</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">'div/div[1]/a/img/@src'</span><span class="p">)</span>
+            <span class="n">price_type</span> <span class="o">=</span> <span class="n">goods</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">'div/div[3]/strong/em/text()'</span><span class="p">)</span>
+            <span class="n">price_data</span> <span class="o">=</span> <span class="n">goods</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">'div/div[3]/strong/i/text()'</span><span class="p">)</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">goods</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">'div/div[4]/a/@title'</span><span class="p">)</span>
+            <span class="n">comment</span> <span class="o">=</span> <span class="n">goods</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">'div/div[5]/strong/a/text()'</span><span class="p">)</span>
+            <span class="n">uid</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">'jd.com/(.*?).html'</span><span class="p">,</span> <span class="n">link</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">if</span> <span class="n">link</span> <span class="k">else</span> <span class="bp">None</span>
+
+            <span class="k">if</span> <span class="n">uid</span><span class="p">:</span>
+                <span class="n">uid</span> <span class="o">=</span> <span class="n">uid</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">link</span> <span class="o">=</span> <span class="s">'http:{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">link</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">if</span> <span class="n">link</span> <span class="k">else</span> <span class="s">''</span>
+                <span class="n">img</span> <span class="o">=</span> <span class="s">'http:{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">if</span> <span class="n">img</span> <span class="k">else</span> <span class="s">''</span>
+                <span class="n">price_type</span> <span class="o">=</span> <span class="n">price_type</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">price_type</span> <span class="k">else</span> <span class="s">''</span>
+                <span class="n">price_data</span> <span class="o">=</span> <span class="n">price_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">price_data</span> <span class="k">else</span> <span class="s">''</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">name</span> <span class="k">else</span> <span class="s">''</span>
+                <span class="n">comment</span> <span class="o">=</span> <span class="n">comment</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">comment</span> <span class="k">else</span> <span class="s">''</span>
+                <span class="n">relist</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s">'uid'</span><span class="p">:</span> <span class="n">uid</span><span class="p">,</span>
+                    <span class="s">'link'</span><span class="p">:</span> <span class="n">link</span><span class="p">,</span>
+                    <span class="s">'img'</span><span class="p">:</span> <span class="n">img</span><span class="p">,</span>
+                    <span class="s">'price_type'</span><span class="p">:</span> <span class="n">price_type</span><span class="p">,</span>
+                    <span class="s">'price_data'</span><span class="p">:</span> <span class="n">price_data</span><span class="p">,</span>
+                    <span class="s">'name'</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+                    <span class="s">'comment'</span><span class="p">:</span> <span class="n">comment</span>
+                <span class="p">})</span>
+        <span class="k">return</span> <span class="n">relist</span>
+
+    <span class="k">def</span> <span class="nf">comment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">product_id</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="s">"""评论
+        """</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s">'https://sclub.jd.com/comment/productPageComments.action?productId={}&amp;score=0&amp;sortType=3&amp;'</span> \
+              <span class="s">'page={}&amp;pageSize=10&amp;callback=fetchJSON_comment98vv157'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">product_id</span><span class="p">,</span> <span class="n">page</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'javascript:void(0);'</span><span class="p">,</span> <span class="s">''</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">'fetchJSON_comment98vv157</span><span class="err">\</span><span class="s">((.*?)</span><span class="err">\</span><span class="s">}</span><span class="err">\</span><span class="s">);'</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s">'}'</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">' '</span><span class="p">,</span> <span class="s">''</span><span class="p">)</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'":null'</span><span class="p">,</span> <span class="s">'":"null"'</span><span class="p">)</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'":false'</span><span class="p">,</span> <span class="s">'":"false"'</span><span class="p">)</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'":true'</span><span class="p">,</span> <span class="s">'":"true"'</span><span class="p">)</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">data</span>
+            <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">'发生错误在[JDong.comment]时:{}</span><span class="se">\n</span><span class="s">请将报错内容提交到github:评论text{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">text</span><span class="p">))</span>
+                <span class="nb">exit</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">get_comment_page</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">product_id</span><span class="p">):</span>
+        <span class="s">"""获取评论页数
+        """</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">comment</span><span class="p">(</span><span class="n">product_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s">'maxPage'</span><span class="p">]</span> <span class="k">if</span> <span class="n">data</span> <span class="k">else</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">get_color_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">product_id</span><span class="p">):</span>
+        <span class="s">"""同一种商品的不同分类
+        """</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s">'https://item.jd.com/{}.html'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">product_id</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">' '</span><span class="p">,</span> <span class="s">''</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s">'colorSize:{}'</span> <span class="ow">in</span> <span class="n">text</span> <span class="ow">or</span> <span class="s">'colorSize'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">color_size</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">'colorSize(.*?)}],'</span><span class="p">,</span> <span class="n">text</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">color_size</span> <span class="o">=</span> <span class="n">color_size</span> <span class="o">+</span> <span class="s">'}]'</span>
+            <span class="n">color_size</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">'</span><span class="err">\</span><span class="s">[(.*?)</span><span class="err">\</span><span class="s">]'</span><span class="p">,</span> <span class="n">color_size</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">color_size</span> <span class="o">=</span> <span class="s">'['</span> <span class="o">+</span> <span class="n">color_size</span> <span class="o">+</span> <span class="s">']'</span>
+            <span class="k">return</span> <span class="nb">eval</span><span class="p">(</span><span class="n">color_size</span><span class="p">)</span>
+        <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'发生错误在[JDong.get_color_size]时:{}</span><span class="se">\n</span><span class="s">请将报错内容提交到github:商品id{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">product_id</span><span class="p">))</span>
+            <span class="nb">exit</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">get_skuids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">product_id</span><span class="p">):</span>
+        <span class="s">"""虽然是不同的id，但是是同一种商品
+        """</span>
+        <span class="n">color_size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_color_size</span><span class="p">(</span><span class="n">product_id</span><span class="p">)</span>
+        <span class="n">skuids</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">color_size</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">skuids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="s">'SkuId'</span><span class="p">]))</span>
+            <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="k">return</span> <span class="n">skuids</span></code></pre></figure>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://localhost:4000/closure/" class="btn" title="Closure">Previous</a>
+      
+      
+        <a href="http://localhost:4000/python/web/python-login/" class="btn" title="Python login zhihu">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2018 Ulysses. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</span>
+<div class="social-icons">
+	<a href="https://github.com/ulysseswolf" title="Ulysses on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://localhost:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

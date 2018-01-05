@@ -1,0 +1,255 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Closure &#8211; Ulysses</title>
+<meta name="description" content="Closure
+
+">
+<meta name="keywords" content="">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Closure">
+<meta name="twitter:description" content="Closure
+
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/site-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Closure">
+<meta property="og:description" content="Closure
+
+">
+<meta property="og:url" content="http://localhost:4000/closure/">
+<meta property="og:site_name" content="Ulysses">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/closure/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Ulysses Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post">
+
+
+<header class="masthead">
+	<div class="wrap">
+
+      <h1 class="site-title animated fadeIn"><a href="http://localhost:4000/">Ulysses</a></h1>
+	</div>
+</header><!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          
+        </ul>
+        
+          <h1 class="entry-title">Closure</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+        <span class="author vcard">By <span class="fn">Ulysses</span></span>
+        <span class="entry-date date published"><time datetime="2016-06-27T00:00:00+08:00"><i class="fa fa-calendar-o"></i> June 27, 2016</time></span>
+        
+        
+        
+        
+      </footer>
+      <div class="entry-content">
+        <h1 id="closure">Closure</h1>
+
+<p>定义
+闭包是一种强大的抽象机制。
+闭包是引用了自由变量的函数，被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境。
+闭包只有在被调用时才执行操作。</p>
+
+<p>条件
+函数可以被当作参数传递、也可以作为函数返回值、绑定到变量名</p>
+
+<h2 id="ruby中的闭包">ruby中的闭包</h2>
+<p>4种闭包方式：blocks, Procs, Methods, lambdas
+迭代是闭包在 Ruby 中最常见的用法</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="mf">10.</span><span class="n">times</span> <span class="p">{</span><span class="n">puts</span> <span class="s">'hello'</span><span class="p">}</span>   
+
+  <span class="n">tax</span> <span class="o">=</span> <span class="mf">0.08</span>   
+  <span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.45</span><span class="p">,</span> <span class="mf">6.34</span><span class="p">,</span> <span class="mf">3.78</span><span class="p">]</span>   
+
+  <span class="n">tax_table</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="nb">map</span> <span class="p">{</span><span class="o">|</span><span class="n">price</span><span class="o">|</span> <span class="p">{:</span><span class="n">price</span> <span class="o">=&gt;</span> <span class="n">price</span><span class="p">,</span> <span class="p">:</span><span class="n">tax</span> <span class="o">=&gt;</span> <span class="n">price</span> <span class="o">*</span> <span class="n">tax</span><span class="p">}}</span>   
+
+  <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>    
+  <span class="n">prices</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span><span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="nb">sum</span> <span class="o">+=</span> <span class="n">n</span><span class="p">}</span>   
+
+
+<span class="c">### 用yield自定义闭包</span>
+
+<span class="k">def</span> <span class="nf">html</span>   
+  <span class="n">puts</span> <span class="s">"head"</span>   
+  <span class="k">yield</span>   
+  <span class="n">puts</span> <span class="s">"footer"</span>   
+<span class="n">end</span>   
+
+<span class="n">html</span> <span class="p">{</span><span class="n">puts</span> <span class="s">"body"</span><span class="p">}</span>   
+
+
+<span class="c">### 实施策略</span>
+
+<span class="k">def</span> <span class="nf">do_transaction</span>   
+   <span class="n">begin</span>   
+      <span class="n">setup_transaction</span>   
+      <span class="k">yield</span>   
+      <span class="n">commit_transaction</span>   
+   <span class="n">rescue</span>   
+      <span class="n">roll_back_transaction</span>   
+   <span class="n">end</span>   
+<span class="n">end</span>   
+
+<span class="c">## python 中的闭包 ##</span>
+
+<span class="k">def</span> <span class="nf">add1</span><span class="p">():</span>   
+  <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>   
+  <span class="k">return</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>   
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">add1</span><span class="p">()</span>   
+<span class="n">b</span> <span class="o">=</span> <span class="n">add1</span><span class="p">()</span>   
+
+<span class="k">print</span> <span class="n">a</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="c">#10   </span>
+<span class="k">print</span> <span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c">#11   </span>
+<span class="k">print</span> <span class="n">b</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span> <span class="c">#100   </span>
+<span class="k">print</span> <span class="n">b</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c">#101   </span>
+
+<span class="c">### 装饰器</span>
+
+<span class="k">def</span> <span class="nf">makebold</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>   
+  <span class="k">def</span> <span class="nf">wrapped</span><span class="p">():</span>   
+    <span class="k">return</span> <span class="s">"&lt;b&gt;"</span> <span class="o">+</span> <span class="n">fn</span><span class="p">()</span> <span class="o">+</span> <span class="s">"&lt;/b&gt;"</span>   
+    
+  <span class="k">return</span> <span class="n">wrapped</span>   
+
+<span class="k">def</span> <span class="nf">makeitalic</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>   
+  <span class="k">def</span> <span class="nf">wrapped</span><span class="p">():</span>   
+    <span class="k">return</span> <span class="s">"&lt;i&gt;"</span> <span class="o">+</span> <span class="n">fn</span><span class="p">()</span> <span class="o">+</span> <span class="s">"&lt;/i&gt;"</span>   
+
+  <span class="k">return</span> <span class="n">wrapped</span>   
+
+<span class="nd">@makebold</span>      <span class="c"># makebold(makeitalic(hello))   </span>
+<span class="nd">@makeitalic</span>    <span class="c"># makeitalic(hello)   </span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>   
+  <span class="k">return</span> <span class="s">"hello"</span>   
+ 
+ <span class="k">print</span><span class="p">(</span><span class="n">hello</span><span class="p">())</span> <span class="c">#&lt;b&gt;&lt;i&gt;hello&lt;/i&gt;&lt;/b&gt;   </span>
+ </code></pre></figure>
+
+<h2 id="其他作用">其他作用</h2>
+<p>因为闭包只有在被调用时才执行操作，即“惰性求值”，所以它可以被用来定义控制结构。例如：在Smalltalk语言中，所有的控制结构，包括分歧条件(if/then/else)和循环(while和for)，都是通过闭包实现的</p>
+
+<p>闭包可以实现对象系统
+闭包过程很像类（父函数）生成实例（闭包），不同的是父函数只在调用时执行，执行完毕后其环境就会释放，而类则在文件执行时创建，一般程序执行完毕后作用域才释放，因此对一些需要重用的功能且不足以定义为类的行为，使用闭包会比使用类占用更少的资源，且更轻巧灵活。</p>
+
+<p>例：假设我们仅仅想打印出各类动物的叫声，分别以类和闭包来实现：
+这里只是想输出一下动物的叫声，定义一个 Animal 类未免小题大做，而且 voice 函数在执行完毕后，其作用域就已经释放，但 Animal 类及其实例 dog 的相应属性却一直贮存在内存中</p>
+
+<p><img src="https://segmentfault.com/img/bVsSLy" alt="image" /></p>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://localhost:4000/ruby/ruby/" class="btn" title="ruby">Previous</a>
+      
+      
+        <a href="http://localhost:4000/python/python-crawler/" class="btn" title="python crawler demo">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2018 Ulysses. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</span>
+<div class="social-icons">
+	<a href="https://github.com/ulysseswolf" title="Ulysses on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://localhost:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

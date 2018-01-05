@@ -1,0 +1,13 @@
+
+
+
+<img src="https://pic2.zhimg.com/50/74e1a8a7e77173a6f614233c86ae973d_hd.jpg">
+aaa
+<script>
+function showImg( url ) {
+        var frameid = 'frameimg' + Math.random();
+        window.img = '<img id="img" src=\''+url+'?'+Math.random()+'\' /><script>window.onload = function() { parent.document.getElementById(\''+frameid+'\').height = document.getElementById(\'img\').height+\'px\'; }<'+'/script>';
+        document.write('<iframe id="'+frameid+'" src="javascript:parent.img;" frameBorder="0" scrolling="no" width="100%"></iframe>');
+}
+showImg('https://pic2.zhimg.com/50/74e1a8a7e77173a6f614233c86ae973d_hd.jpg')
+</script>

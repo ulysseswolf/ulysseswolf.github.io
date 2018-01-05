@@ -84,7 +84,7 @@ re.compile() 函数接受一个标志参数叫 re.DOTALL ，它可以让正则�
 
 1.绝对路径转相对路径
 print os.path.relpath("d:/MyProj/MyFile.txt")
-#..\MyProj\MyFile.txt
+## ..\MyProj\MyFile.txt
 是根据当前路径的相对路径
  
 
@@ -92,28 +92,28 @@ print os.path.relpath("d:/MyProj/MyFile.txt")
  注意用os.chdir(dir)改变当前比较路径
 path = "..\MyProj\MyFile.txt"
 print os.path.abspath(path)
-#D:\MyProj\MyFile.txt
+## D:\MyProj\MyFile.txt
 
-# setup file sharing
+## setup file sharing
 python3 -m http.server
 
-# Reverse While Iterating In A Loop.
+## Reverse While Iterating In A Loop.
 for element in reversed([1,3,5]): print(element)
 
-# Reverse A String In Line.
+## Reverse A String In Line.
 "Test Python"[::-1]
 
-# Reverse A List Using Slicing.
+## Reverse A List Using Slicing.
 [1, 3, 5][::-1]
 
-# Find The Most Frequent Value In A List.
+## Find The Most Frequent Value In A List.
 test = [1,2,3,4,2,2,3,1,4,4,4]
 print(max(set(test), key=test.count))
-#-> 4
+##-> 4
 
-# Lambda To Imitate Print Function.
+## Lambda To Imitate Print Function.
 import sys
 lprint=lambda *args:sys.stdout.write(" ".join(map(str,args)))
 lprint("python", "tips",1000,1001)
-#-> python tips 1000 1001
+##-> python tips 1000 1001
 

@@ -1,0 +1,237 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Git &#8211; Ulysses</title>
+<meta name="description" content="Git
+View the change history of a file
+git log -p filename
+or
+gitk filename
+
+">
+<meta name="keywords" content="git">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Git">
+<meta name="twitter:description" content="Git
+View the change history of a file
+git log -p filename
+or
+gitk filename
+
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/site-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git">
+<meta property="og:description" content="Git
+View the change history of a file
+git log -p filename
+or
+gitk filename
+
+">
+<meta property="og:url" content="http://localhost:4000/linux/git/">
+<meta property="og:site_name" content="Ulysses">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/linux/git/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Ulysses Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post">
+
+
+<header class="masthead">
+	<div class="wrap">
+
+      <h1 class="site-title animated fadeIn"><a href="http://localhost:4000/">Ulysses</a></h1>
+	</div>
+</header><!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://localhost:4000/tags/#git" title="Pages tagged git">git</a></li>
+        </ul>
+        
+          <h1 class="entry-title">Git</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+        <span class="author vcard">By <span class="fn">Ulysses</span></span>
+        <span class="entry-date date published"><time datetime="2016-01-21T00:00:00+08:00"><i class="fa fa-calendar-o"></i> January 21, 2016</time></span>
+        
+        
+        
+        
+      </footer>
+      <div class="entry-content">
+        <h1 id="git">Git</h1>
+<h2 id="view-the-change-history-of-a-file">View the change history of a file</h2>
+<p>git log -p filename</p>
+<h2 id="or">or</h2>
+<p>gitk filename</p>
+
+<p>取消对某个文件的修改
+git checkout – file</p>
+
+<p>WARNING: your changes will be discarded — no backup is kept.
+You can do it without the – (as suggested by nimrodm), but if the filename looks like a branch or tag (or other revision identifier), it may get confused, so using – is best.</p>
+
+<p>You can also check out a particular version of a file:</p>
+
+<p>git checkout v1.2.3 – file         # tag v1.2.3
+git checkout stable – file         # stable branch
+git checkout origin/master – file  # upstream master
+git checkout HEAD – file           # the version from the most recent commit
+git checkout HEAD^ – file          # the version before the most recent commit</p>
+
+<p>git log –oneline <filename> will give you a more compact log, and only include changes to the specific file</filename></p>
+
+<h2 id="列出标签">列出标签</h2>
+<p>$ git tag # 在控制台打印出当前仓库的所有标签  <br />
+$ git tag -l ‘v0.1.*’ # 搜索符合模式的标签</p>
+
+<h2 id="打标签">打标签</h2>
+<p>git标签分为两种类型：轻量标签和附注标签。轻量标签是指向提交对象的引用，附注标签则是仓库中的一个独立对象。建议使用附注标签。</p>
+<h2 id="创建轻量标签">创建轻量标签</h2>
+<p>$ git tag v0.1.2-light</p>
+<h1 id="创建附注标签">创建附注标签</h1>
+<p>$ git tag -a v0.1.2 -m “发布0.1.2版本”
+创建轻量标签不需要传递参数，直接指定标签名称即可。 <br />
+创建附注标签时，参数a即annotated的缩写，指定标签类型，后附标签名。参数m指定标签说明，说明信息会保存在标签对象中。</p>
+
+<h2 id="切换到标签">切换到标签</h2>
+<p>与切换分支命令相同，用git checkout [tagname]
+git checkout tag/3.2.1</p>
+
+<h2 id="查看标签信息">查看标签信息</h2>
+<p>用git show命令可以查看标签的版本信息： <br />
+$ git show v0.1.2</p>
+
+<h2 id="删除标签">删除标签</h2>
+<p>误打或需要修改标签时，需要先将标签删除，再打新标签。 <br />
+$ git tag -d v0.1.2 # 删除标签 <br />
+参数d即delete的缩写，意为删除其后指定的标签。</p>
+
+<h2 id="补打标签">补打标签</h2>
+<p>打标签不必要在head之上，也可在之前的版本上打，这需要你知道某个提交对象的校验和（通过git log获取）。</p>
+<h1 id="补打标签-1">补打标签</h1>
+<p>$ git tag -a v0.1.1 9fbc3d0</p>
+
+<h2 id="标签发布">标签发布</h2>
+<p>通常的git push不会将标签对象提交到git服务器，我们需要进行显式的操作： <br />
+$ git push origin v0.1.2 # 将v0.1.2标签提交到git服务器  <br />
+$ git push origin –tags # 将本地所有标签一次性提交到git服务器</p>
+
+<h2 id="git-checkout-error-path-is-unmerged">git checkout error, path is unmerged</h2>
+<p>If you want to discard modifications you made to the file, you can do:</p>
+
+<p>git reset xxx.txt
+git checkout xxx.txt</p>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://localhost:4000/python/web/python-urllib/" class="btn" title="Python urllib">Previous</a>
+      
+      
+        <a href="http://localhost:4000/python/operator-itemgetter/" class="btn" title="python operator.itemgetter">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2018 Ulysses. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</span>
+<div class="social-icons">
+	<a href="https://github.com/ulysseswolf" title="Ulysses on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://localhost:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

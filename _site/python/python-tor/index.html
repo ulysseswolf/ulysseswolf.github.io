@@ -1,0 +1,240 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>python用requests+tor搭建轮换ip爬虫 &#8211; Ulysses</title>
+<meta name="description" content="python用requests+tor搭建轮换ip爬虫
+
+">
+<meta name="keywords" content="python">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="python用requests+tor搭建轮换ip爬虫">
+<meta name="twitter:description" content="python用requests+tor搭建轮换ip爬虫
+
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/site-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python用requests+tor搭建轮换ip爬虫">
+<meta property="og:description" content="python用requests+tor搭建轮换ip爬虫
+
+">
+<meta property="og:url" content="http://localhost:4000/python/python-tor/">
+<meta property="og:site_name" content="Ulysses">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/python/python-tor/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Ulysses Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post">
+
+
+<header class="masthead">
+	<div class="wrap">
+
+      <h1 class="site-title animated fadeIn"><a href="http://localhost:4000/">Ulysses</a></h1>
+	</div>
+</header><!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://localhost:4000/tags/#python" title="Pages tagged python">python</a></li>
+        </ul>
+        
+          <h1 class="entry-title">python用requests+tor搭建轮换ip爬虫</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+        <span class="author vcard">By <span class="fn">Ulysses</span></span>
+        <span class="entry-date date published"><time datetime="2016-03-16T00:00:00+08:00"><i class="fa fa-calendar-o"></i> March 16, 2016</time></span>
+        
+        
+        
+        
+      </footer>
+      <div class="entry-content">
+        <h1 id="python用requeststor搭建轮换ip爬虫">python用requests+tor搭建轮换ip爬虫</h1>
+
+<p>一般防爬虫有很多办法，最基本的是判断header是不是浏览器，比如python有个robot-detection库可以判断，不过这个太好模拟了，没有用。然后可以通过分析日志限定用户ip一定时间段内访问次数，或者通过cookie、session限定特定用户的访问次数等。理论上说，凡可以看到的内容都是可以通过技术手段爬到的，只是难易的差别。
+下面记录一下在ubuntu server上用tor搭建一个轮换IP的代理，如果爬虫一定时间段内没有得到内容，就可以换一个IP了。你可以先参考最后的几个链接大致了解下。系统用的vultr日本机房ubuntu server14.04。这是一种不用花钱的解决方案，也可以直接购买一些提供IP代理的服务，不需要自己折腾了。(注意：国内的服务器提供商使用的ISP可能限制了tor，如果你按照下边方法发现总是ttl超时，看下tor的log。推荐用国外的服务器跑爬虫）</p>
+
+<p>安装
+安装tor，先sudo su一下。</p>
+
+<p>apt-get update
+apt-get install tor
+/etc/init.d/tor restart
+启动后socks监听9050端口。</p>
+
+<p>tor –hash-password mypassword生成你的密码，之后编辑/etc/tor/torrc</p>
+
+<p>加上
+ControlPort 9051
+HashedControlPassword 16:872860B76453A77D60CA2BB8C1A7042072093276A3D701AD684053EC4C
+让ControlPort监听9051端口，后边那个16:开头的hash就是上一步得到的。</p>
+
+<p>/etc/init.d/tor restart重启下tor。</p>
+
+<p>Python使用
+pip install requesocks</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding:utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">requesocks</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.ipify.org?format=json'</span>
+
+
+<span class="k">def</span> <span class="nf">getip_requests</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">"(+) Sending request with plain requests..."</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">"(+) IP is: "</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="s">""</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">getip_requesocks</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">"(+) Sending request with requesocks..."</span>
+    <span class="n">session</span> <span class="o">=</span> <span class="n">requesocks</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">proxies</span> <span class="o">=</span> <span class="p">{</span><span class="s">'http'</span><span class="p">:</span> <span class="s">'socks5://127.0.0.1:9050'</span><span class="p">,</span>
+                       <span class="s">'https'</span><span class="p">:</span> <span class="s">'socks5://127.0.0.1:9050'</span><span class="p">}</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">"(+) IP is: "</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="s">""</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s">"Running tests..."</span>
+    <span class="n">getip_requests</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">getip_requesocks</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">"""(echo authenticate '"yourpassword"'; echo signal newnym; echo quit) | nc localhost 9051"""</span><span class="p">)</span>
+    <span class="n">getip_requesocks</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span></code></pre></figure>
+
+<p>注意中间os.system这句，是用来重新生成一个新的ip的。一般在代码里根据内容是否有效判断是不是需要更新ip了，可以抛出一个异常之后执行这一句重新换个ip。</p>
+
+<p>update：新的requests库版本2.10.0已经支持socks代理了，这下就非常方便了，代理写法和http一样，具体参考其文档，如此一来搭建一个轮换IP的爬虫就非常容易了。</p>
+
+<p>参考
+http://robbinfan.com/blog/11/anti-crawler-strategy</p>
+
+<p>http://sacharya.com/crawling-anonymously-with-tor-in-python/</p>
+
+<p>http://stackoverflow.com/questions/1969958/how-to-change-tor-exit-node-programmatically</p>
+
+<p>https://github.com/dvska/requesocks</p>
+
+<p>https://github.com/PegasusWang/PySiteCrawler</p>
+
+<p>http://platinhom.github.io/2016/01/21/proxy-py/</p>
+
+<p>http://tor.stackexchange.com/questions/4538/bootstrapped-at-10-for-hours ttl超时请参考这个方法使用obfsproxy</p>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://localhost:4000/linux/vi/" class="btn" title="vi">Previous</a>
+      
+      
+        <a href="http://localhost:4000/python/python-tips/" class="btn" title="python tips">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2018 Ulysses. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</span>
+<div class="social-icons">
+	<a href="https://github.com/ulysseswolf" title="Ulysses on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://localhost:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

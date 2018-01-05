@@ -1,0 +1,282 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>python tips &#8211; Ulysses</title>
+<meta name="description" content="python tips
+
+">
+<meta name="keywords" content="python">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="python tips">
+<meta name="twitter:description" content="python tips
+
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/site-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python tips">
+<meta property="og:description" content="python tips
+
+">
+<meta property="og:url" content="http://localhost:4000/python/python-tips/">
+<meta property="og:site_name" content="Ulysses">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/python/python-tips/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Ulysses Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post">
+
+
+<header class="masthead">
+	<div class="wrap">
+
+      <h1 class="site-title animated fadeIn"><a href="http://localhost:4000/">Ulysses</a></h1>
+	</div>
+</header><!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://localhost:4000/tags/#python" title="Pages tagged python">python</a></li>
+        </ul>
+        
+          <h1 class="entry-title">python tips</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+        <span class="author vcard">By <span class="fn">Ulysses</span></span>
+        <span class="entry-date date published"><time datetime="2016-03-18T00:00:00+08:00"><i class="fa fa-calendar-o"></i> March 18, 2016</time></span>
+        
+        
+        
+        
+      </footer>
+      <div class="entry-content">
+        <h1 id="python-tips">python tips</h1>
+
+<p>Unicode 相关的字符串问题</p>
+
+<p>Python 3 相比 Python 2 最大的改动之一，就是在语言内部对 unicode 的处理。</p>
+
+<p>在 Python 2 中，文本类型 （也就是 unicode） 和二进制类型 （也就是 str） 的边界非常模糊。 <br />
+很多函数的参数既可以是文本，也可以是二进制。但是在 Python 3 中，文本类型和二进制类型的字符串被完全的区分开了。</p>
+
+<p>于是，下面这段在 Python 2 下可以正常运行的代码在 Python 3 下就会报错：</p>
+
+<p>mymac = hmac.new(‘abc’)
+TypeError: key: expected bytes or bytearray, but got ‘str’
+解决办法其实很简单，只要加上判断：如果 value 是文本类型，就将其转换为二进制。如下所示：</p>
+
+<p>value = ‘abc’
+if isinstance(value, six.text_type):
+    value = value.encode(encoding=’utf-8’)
+mymac = hmac.new(value)</p>
+
+<p>在 Python 3 中，很多内置函数被修改成了只返成迭代器 Iterator：
+map()
+filter()
+dict.items()
+迭代器有诸多好处，最大的好处就是，使用迭代器不需要一次性分配大量内存，所以它的内存效率比较高。 <br />
+但是迭代器有一个天然的特点，当你对某个迭代器做了一次迭代，访问完它的内容后，就没法再次访问那些内容了。 <br />
+迭代器中的所有内容都只能被访问一次。</p>
+
+<p>如何将字段转换成一个object，然后使用对象-属性的方式读取 <br />
+1 使用namedtuple</p>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p>import collections
+MyStruct = collections.namedtuple(‘mystruct’, ‘a b c’)
+m = MyStruct(a=1, b={‘c’: 2}, c=[‘hi’])
+m.a</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p>2 
+class Struct:
+      def <strong>init</strong>(self, **entries):
+      	  self.<strong>dict</strong>.update(entries)</p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p>args = {‘a’: 1, ‘b’: 2}
+s = Struct(**args)
+s.a</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p>列出一个目录的所有文件</p>
+
+<p>1 os.listdir
+from os import listdir
+from os.path import isfile, join
+files = [f for f in listdir(dir) if isfile(join(dir, f))]</p>
+
+<p>2 os.walk
+from os import walk
+f=[]
+for (dirpath, dirname, filenames) in walk(dir):
+	f.extend(filenames)</p>
+
+<p>3 glob
+import os
+os.chdir(dir)
+glob.glob(‘*.txt’)</p>
+
+<p>用函数名字符串调用一个函数</p>
+
+<p>import foo
+a = getattr(foo, ‘bar’)
+result = a()</p>
+
+<p>or:
+result = getattr(foo, ‘bar’)()</p>
+
+<p>正则匹配多行文本
+点(.)不能匹配换行符
+re.compile() 函数接受一个标志参数叫 re.DOTALL ，它可以让正则表达式中的点(.)匹配包括换行符在内的任意字符</p>
+
+<p>1.绝对路径转相对路径
+print os.path.relpath(“d:/MyProj/MyFile.txt”)</p>
+<h2 id="myprojmyfiletxt">..\MyProj\MyFile.txt</h2>
+<p>是根据当前路径的相对路径</p>
+
+<p>2.相对路径转绝对路径
+ 注意用os.chdir(dir)改变当前比较路径
+path = “..\MyProj\MyFile.txt”
+print os.path.abspath(path)</p>
+<h2 id="dmyprojmyfiletxt">D:\MyProj\MyFile.txt</h2>
+
+<h2 id="setup-file-sharing">setup file sharing</h2>
+<p>python3 -m http.server</p>
+
+<h2 id="reverse-while-iterating-in-a-loop">Reverse While Iterating In A Loop.</h2>
+<p>for element in reversed([1,3,5]): print(element)</p>
+
+<h2 id="reverse-a-string-in-line">Reverse A String In Line.</h2>
+<p>“Test Python”[::-1]</p>
+
+<h2 id="reverse-a-list-using-slicing">Reverse A List Using Slicing.</h2>
+<p>[1, 3, 5][::-1]</p>
+
+<h2 id="find-the-most-frequent-value-in-a-list">Find The Most Frequent Value In A List.</h2>
+<p>test = [1,2,3,4,2,2,3,1,4,4,4]
+print(max(set(test), key=test.count))
+##-&gt; 4</p>
+
+<h2 id="lambda-to-imitate-print-function">Lambda To Imitate Print Function.</h2>
+<p>import sys
+lprint=lambda *args:sys.stdout.write(“ “.join(map(str,args)))
+lprint(“python”, “tips”,1000,1001)
+##-&gt; python tips 1000 1001</p>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://localhost:4000/python/python-tor/" class="btn" title="python用requests+tor搭建轮换ip爬虫">Previous</a>
+      
+      
+        <a href="http://localhost:4000/python/sort/" class="btn" title="sort">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2018 Ulysses. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</span>
+<div class="social-icons">
+	<a href="https://github.com/ulysseswolf" title="Ulysses on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://localhost:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>
