@@ -1,89 +1,94 @@
 ---
 layout: post
-title: "Generate Parentheses"
-description: "leetcode problem"
-categories: 
-- python
-tags: [python]
+title: "Ruby singleton"
+description: ""
+categories:
+- ruby
+tags: [ruby]
 ---
 {{ page.title }}
 ================
 
-Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
-
-For example, given n = 3, a solution set is:
-
-[
-  "((()))",
-  "(()())",
-  "(())()",
-  "()(())",
-  "()()()"
-]
-Approach #1: Brute Force [Accepted]
-Intuition
-
-We can generate all 2^{2n}2
-​2n
-​​  sequences of '(' and ')' characters. Then, we will check if each one is valid.
-
-Algorithm
-
-To generate all sequences, we use a recursion. All sequences of length n is just '(' plus all sequences of length n-1, and then ')' plus all sequences of length n-1.
-
-To check whether a sequence is valid, we keep track of balance, the net number of opening brackets minus closing brackets. If it falls below zero at any time, or doesn't end in zero, the sequence is invalid - otherwise it is valid.
-
-{% highlight python %}
-class Solution(object):
-    def generateParenthesis(self, n):
-        def generate(A = []):
-            if len(A) == 2*n:
-                if valid(A):
-                    ans.append("".join(A))
-            else:
-                A.append('(')
-                generate(A)
-                A.pop()
-                A.append(')')
-                generate(A)
-                A.pop()
-
-        def valid(A):
-            bal = 0
-            for c in A:
-                if c == '(': bal += 1
-                else: bal -= 1
-                if bal < 0: return False
-            return bal == 0
-
-        ans = []
-        generate()
-        return ans
-{% endhighlight %}
-Approach #2: Backtracking [Accepted]
-Intuition and Algorithm
-
-Instead of adding '(' or ')' every time as in Approach #1, let's only add them when we know it will remain a valid sequence. We can do this by keeping track of the number of opening and closing brackets we have placed so far.
-
-We can start an opening bracket if we still have one (of n) left to place. And we can start a closing bracket if it would not exceed the number of opening brackets.
-
-{% highlight python %}
-class Solution(object):
-    def generateParenthesis(self, N):
-        ans = []
-        def backtrack(S = '', left = 0, right = 0):
-            if len(S) == 2 * N:
-                ans.append(S)
-                return
-            if left < N:
-                backtrack(S+'(', left+1, right)
-            if right < left:
-                backtrack(S+')', left, right+1)
-
-        backtrack()
-        return ans
+{% highlight python%}
+class Logger  
+    DEBUG = 0
+    INFO = 1
+    ERROR = 2
+    NOTHING = 3
+          
+    LEVEL = DEBUG
+          
+    def debug msg  
+        puts msg if DEBUG >= LEVEL
+    end
+          
+    def info msg  
+        puts msg if INFO >= LEVEL
+    end
+          
+    def error msg  
+        puts msg if ERROR >= LEVEL
+    end
+end
 {% endhighlight %}
 
+通过这个类来打印日志，只需要控制LEVEL的级别，就可以自由地控制打印的内容。比如 现在项目处于开发阶段，就将LEVEL设置为DEBUG，这样所有的日志信息都会被打印。而项目如果上线了 ，可以把LEVEL设置为INFO，这样就只能看到INFO及以上级别的日志打印。如果你只想看到错误日志， 就可以把LEVEL设置为ERROR。而如果你开发的项目是客户端版本，不想让任何日志打印出来，可以将 LEVEL设置为NOTHING。打印的时候只需要调用：
+
+logger = Logger.new
+logger.debug("Hello World")
 
 
+虽然这个工具好用，可是打印这种事情是不区分对象的，这里每次 需要打印日志的时候都需要new出一个新的Logger，太占用内存了，可以将这个工具改成用单例 模式实现。
+
+{% highlight python%}
+class Logger  
+    private_class_method :new
+          
+    DEBUG = 0
+    INFO = 1
+    ERROR = 2
+    NOTHING = 3
+          
+    LEVEL = DEBUG
+          
+    @@instance = nil
+          
+    def debug msg  
+        puts msg if DEBUG >= LEVEL
+    end
+          
+    def info msg  
+        puts msg if INFO >= LEVEL
+    end
+          
+    def error msg  
+        puts msg if ERROR >= LEVEL
+    end
+          
+    def self.instance  
+        @@instance = new unless @@instance
+    end
+end
+{% endhighlight %}
+
+首先使用private_class_method将Logger的new方法私有化，这样就无法通过new方法创建 Logger的实例了。然后使用一个静态变量@@instance来保存实例，并提供一个公有的instance方法用于 获取Logger的实例，在这个方法里面判断如果@@instance为nil，就new出一个新的Logger实例，否则就 直接返回@@instance。这样就可以保证内存当中只会存在一个Logger的实例了。这时打 印日志的代码需要改成如下方式：
+
+logger = Logger.instance  
+logger.debug("Hello World")
+
+在ruby上还有更简单的实现方式。
+
+{% highlight python%}
+require 'singleton'
+class Logger  
+    include Singleton  
+          
+    #省略剩余代码  
+end
+{% endhighlight %}
+首先从系统配置路径中引入singleton.rb这个文件，然后在Logger类里引入Singleton这 个模块。  
+ruby有一个模块 (module)机制，在类里引入模块后，该类可以访问模块中的定义的方法。
+instance方法就是定义在 Singleton这个模块里面的，然后在运行时将这个模块引入，Logger类就可以访问Singleton中的 instance方法了。
+
+单例：保证一个类仅有一个实例，并提供一个访问它的全局访问点。
 
