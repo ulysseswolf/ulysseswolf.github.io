@@ -8,7 +8,7 @@ tags: [python]
 ---
 {{ page.title }}
 ================
-矩阵表示地图，0 表示海洋，1 表示陆地，计算独立岛屿
+10 * 10矩阵表示地图，0 表示海洋，1 表示陆地，计算独立岛屿   
 {% highlight python %}
 m = [[1,1,1,0,0,0,0,0,1,1], 
      [1,0,1,0,1,1,1,0,1,1],
@@ -48,7 +48,3 @@ for i in range(9):
             dfs(i, j, nums)
 print('there are {0} isolated islands'.format(-nums))
 {% endhighlight %}
-
-
-
-
