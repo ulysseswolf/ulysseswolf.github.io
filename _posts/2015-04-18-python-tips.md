@@ -14,6 +14,10 @@ tags: [python]
 还是排序，我们希望把正的放前面，负的放后面，并且分别按绝对值从小到大。即输出：[1, 2, 9, 10, -2, -4, -5, -12]
 最简单的方法是：lst.sort(key=lambda x: (x < 0, abs(x)))
 
+Python的locals()函数会以dict类型返回当前位置的全部局部变量。
+动态加载re:
+locals()['re'] = __import__('re')
+
 Unicode 相关的字符串问题
 
 Python 3 相比 Python 2 最大的改动之一，就是在语言内部对 unicode 的处理。
