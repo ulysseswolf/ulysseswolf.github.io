@@ -4,10 +4,11 @@ title: "shell commonds"
 description: ""
 categories: 
 - linux
-tags: [linux]
+tags: [Linux]
 ---
 {{ page.title }}
 ================
+
 把当前目录下的所有.c 和 .h 文件中的 "waf"字符 全部 替换成 “tamper”   
 {% highlight python %}
 find . -name "*.[ch]" |xargs sed -i 's/waf/tamper/g'   

@@ -1,15 +1,15 @@
 ---
-layout: post
-title: "tornado spider"
-description: ""
-categories: 
-- python
+layout: post   
+title: "tornado spider"   
+description: ""   
+categories:    
+- python   
 tags: [python]
 ---
 {{ page.title }}
 ================
 
-{% endhighlight %}
+{% highlight python%}
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
