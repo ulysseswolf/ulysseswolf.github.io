@@ -36,6 +36,10 @@ if isinstance(value, six.text_type):
     value = value.encode(encoding='utf-8')
 mymac = hmac.new(value)
 
+CPython 3 使用 UTF8 作为默认编码（ sys.getdefaultencoding() ）   
+
+CPython 2 中，True 和 False 使用全局变量实现。 Python 3 将 True 和 False 设计为语言 关键字，不再允许对其重新赋值。   
+
 在 Python 3 中，很多内置函数被修改成了只返成迭代器 Iterator：
 map()
 filter()
