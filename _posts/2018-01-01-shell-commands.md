@@ -8,6 +8,9 @@ tags: [Linux]
 ---
 {{ page.title }}
 ================
+打印文件中的某一列。它智能的去切分你的数据，不管是空格，还是TAB:
+awk '{print $1}' file
+
 split big file:   
 by line:   
 ### split -l 20 file.txt new    
