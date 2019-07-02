@@ -10,14 +10,26 @@ tags: [python]
 ================
 
 {% highlight python %}
-# -*- coding: utf-8 -*-
+### webdriver get source
+from selenium import webdriver
+import time
+
+options = webdriver.ChromeOptions()
+options.add_argument('--ignore-certificate-errors')
+options.add_argument("--test-type")
+options.binary_location = "/usr/bin/chromium"
+driver = webdriver.Chrome(chrome_options=options)
+driver.get('https://python.org')
+
+html = driver.page_source
+print(html)
+
 
 import re
 import requests
 from lxml import etree
 
 from .utils import *
-
 
 class JDong(object):
     def __init__(self):
