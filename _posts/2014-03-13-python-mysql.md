@@ -10,19 +10,15 @@ tags: [python]
 {{ page.title }}
 ================
 
-　　爬虫抓到的数据需要存储到MySQL中，所以我们需要熟悉下使用Python操作MySQL数据库。首先你的机器上要安装MySQLdb，MySQLdb是用于Python连接Mysql数据库的接口，它实现了Python数据库 API规范V2.0，是基于MySQL C API上建立的。通过`import MySQLdb`语句查看是否安装MySQLdb。    
 #1 连接数据库
-　　连接数据库的前提在于首先你的数据库需要存在，假设你的机器上已经安装了MySQL，创建了数据库test_db，在test_db中有张名为test_info的表，`PS：记得将你的<password>替换为你的密码`：  
 {% highlight python %}
-#!/usr/bin/python
-# -*- coding: UTF-8 -*-
-import MySQLdb
+import pymysql
 
 def run():
     try:
         # 打开数据库连接，设置charset为utf8，否则存入数据库时在workbench显示为乱码
-        db = MySQLdb.connect("localhost", "root", <password>, "test_DB", charset='utf8')
-    except MySQLdb.Error, e:
+        db = pymysql.connect("localhost", "root", <password>, "test_DB", charset='utf8')
+    except pymysql.Error, e:
         print("Mysql Connect Error %d: %s" % (e.args[0], e.args[1]))
         return
     # 使用cursor()方法获取操作游标
@@ -35,7 +31,7 @@ def run():
     try:
         # 关闭数据库连接
         db.close()
-    except MySQLdb.Error, e:
+    except pymysql.Error, e:
         print("Mysql Close Error %d: %s" % (e.args[0], e.args[1]))
         return
 
@@ -48,8 +44,8 @@ if __name__ == '__main__':
 def run():
     try:
         # 打开数据库连接，设置charset为utf8，否则存入数据库时在workbench显示为乱码
-        db = MySQLdb.connect("localhost", "root", <password>, "test_DB", charset='utf8')
-    except MySQLdb.Error, e:
+        db = pymysql.connect("localhost", "root", <password>, "test_DB", charset='utf8')
+    except pymysql.Error, e:
         print("Mysql Connect Error %d: %s" % (e.args[0], e.args[1]))
         return
     # 使用cursor()方法获取操作游标
@@ -70,7 +66,7 @@ def run():
     try:
         # 关闭数据库连接
         db.close()
-    except MySQLdb.Error, e:
+    except pymysql.Error, e:
         print("Mysql Close Error %d: %s" % (e.args[0], e.args[1]))
         return
 {% endhighlight %} 
@@ -80,8 +76,8 @@ def run():
 def run():
     try:
         # 打开数据库连接，设置charset为utf8，否则存入数据库时在workbench显示为乱码
-        db = MySQLdb.connect("localhost", "root", <password>, "test_DB", charset='utf8')
-    except MySQLdb.Error, e:
+        db = pymysql.connect("localhost", "root", <password>, "test_DB", charset='utf8')
+    except pymysql.Error, e:
         print("Mysql Connect Error %d: %s" % (e.args[0], e.args[1]))
         return
     # 使用cursor()方法获取操作游标
@@ -95,14 +91,14 @@ def run():
         cursor.execute(sql)
         # 提交到数据库执行
         db.commit()
-    except MySQLdb.Error, e:
+    except pymysql.Error, e:
         # 出错时回滚
         print("Mysql Execute Error %d: %s" % (e.args[0], e.args[1]))
         db.rollback()
     try:
         # 关闭数据库连接
         db.close()
-    except MySQLdb.Error, e:
+    except pymysql.Error, e:
         print("Mysql Close Error %d: %s" % (e.args[0], e.args[1]))
         return
 {% endhighlight %}
@@ -112,8 +108,8 @@ def run():
 def run():
     try:
         # 打开数据库连接，设置charset为utf8，否则存入数据库时在workbench显示为乱码
-        db = MySQLdb.connect("localhost", "root", <password>, "test_DB", charset='utf8')
-    except MySQLdb.Error, e:
+        db = pymysql.connect("localhost", "root", <password>, "test_DB", charset='utf8')
+    except pymysql.Error, e:
         print("Mysql Connect Error %d: %s" % (e.args[0], e.args[1]))
         return
     # 使用cursor()方法获取操作游标
@@ -122,7 +118,7 @@ def run():
     sql = "SELECT movie_name FROM test_info"
     try:
         cursor.execute(sql)
-    except MySQLdb.Error, e:
+    except pymysql.Error, e:
         # 出错时回滚
         print("Mysql Execute Error %d: %s" % (e.args[0], e.args[1]))
         db.rollback()
@@ -133,7 +129,7 @@ def run():
     try:
         # 关闭数据库连接
         db.close()
-    except MySQLdb.Error, e:
+    except pymysql.Error, e:
         print("Mysql Close Error %d: %s" % (e.args[0], e.args[1]))
         return
 {% endhighlight %}
@@ -143,27 +139,27 @@ def run():
 def run():
     try:
         # 打开数据库连接，设置charset为utf8，否则存入数据库时在workbench显示为乱码
-        db = MySQLdb.connect("localhost", "root", <password>, "test_DB", charset='utf8')
-    except MySQLdb.Error, e:
+        db = pymysql.connect("localhost", "root", <password>, "test_DB", charset='utf8')
+    except pymysql.Error, e:
         print("Mysql Connect Error %d: %s" % (e.args[0], e.args[1]))
         return
     # 使用cursor()方法获取操作游标
     cursor = db.cursor()
     # 创建数据表SQL语句
-    sql = "UPDATE test_info SET movie_year = '2015' WHERE movie_name = '%s'" % (MySQLdb.escape_string('盗梦空间'))
+    sql = "UPDATE test_info SET movie_year = '2015' WHERE movie_name = '%s'" % (pymysql.escape_string('盗梦空间'))
     try:
         # 执行SQL语句
         cursor.execute(sql)
         # 提交到数据库执行
         db.commit()
-    except MySQLdb.Error, e:
+    except pymysql.Error, e:
         # 出错时回滚
         print("Mysql Execute Error %d: %s" % (e.args[0], e.args[1]))
         db.rollback()
     try:
         # 关闭数据库连接
         db.close()
-    except MySQLdb.Error, e:
+    except pymysql.Error, e:
         print("Mysql Close Error %d: %s" % (e.args[0], e.args[1]))
         return
 {% endhighlight %}
@@ -180,13 +176,13 @@ def run():
 	3 在你的sql语句中yo看起来像ascii字符的unicode字符。  
 	4 在关键字之间有遗漏或者放错位置的空格或者换行。  
 	5 不匹配的单引号、双引号、小括号以及大括号等等。  
-　　如果仔细检查之后没有发现上述问题，那么有可能是你在将参数传入sql语句时，这个参数中带了某些特殊字符，此时可以使用MySQLdb自带的针对MySQL的字符转义函数`escape_string`将参数进行转义。在这个项目中我就遇到了电影的描述信息中存在单引号等特殊字符造成出现上述的错误，通过在构造sql语句时将参数进行转义之后问题就解决了。    
+　　如果仔细检查之后没有发现上述问题，那么有可能是你在将参数传入sql语句时，这个参数中带了某些特殊字符，此时可以使用pymysql自带的针对MySQL的字符转义函数`escape_string`将参数进行转义。在这个项目中我就遇到了电影的描述信息中存在单引号等特殊字符造成出现上述的错误，通过在构造sql语句时将参数进行转义之后问题就解决了。    
 　　cursor.execute()函数可以接受一个参数，也可以接受两个参数，这两种情况如下所示：  
 　　(1) 两个参数    
 {% highlight python %}
 cursor.execute("UPDATE test_info SET movie_year = %s WHERE movie_name = %s", ('''20'1(6''', '盗梦空间'))
 {% endhighlight %}
-　　这种格式是接受两个参数，MySQLdb会自动替你对字符串进行转义和加引号，不必再自己进行转义，执行完此语句之后，表中盗梦空间这条记录的时间字段被修改为`20'1(6`。    
+　　这种格式是接受两个参数，pymysql会自动替你对字符串进行转义和加引号，不必再自己进行转义，执行完此语句之后，表中盗梦空间这条记录的时间字段被修改为`20'1(6`。    
 　　(2) 一个参数  
 　　这种格式是利用字符串格式化生成sql语句，也就是传给execute一个参数：   
 {% highlight python %}
@@ -197,6 +193,6 @@ cursor.execute("UPDATE test_info SET movie_year = %s WHERE movie_name = %s" % ('
 	Mysql Execute Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1(6 WHERE movie_name = 盗梦空间' at line 17
 　　这种格式需要自己对字符串转义和增加引号，应该修改为：  
 {% highlight python %}
-cursor.execute("UPDATE test_info SET movie_year = '%s' WHERE movie_name = '%s'" % (MySQLdb.escape_string('''20'1(6'''), '盗梦空间'))
+cursor.execute("UPDATE test_info SET movie_year = '%s' WHERE movie_name = '%s'" % (pymysql.escape_string('''20'1(6'''), '盗梦空间'))
 {% endhighlight %}
 　　改完之后记录就被正常更新了，**需要注意，在第二种方法中`%s`需要加上单引号。** 相比较而言，还是第一种方法比较好用。  

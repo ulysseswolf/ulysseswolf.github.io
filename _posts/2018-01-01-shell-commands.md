@@ -12,6 +12,13 @@ tags: [Linux]
 myfile.txt contains filenames delimited by newline
 ### zip out.zip -@ < myfile.txt   
 If a file list is specified as -@ [Not on MacOS], zip takes the list of input files from standard input instead of from the command line.
+### Zip an archive without including parent directory
+zip -j ...
+
+Store just the name of a saved file (junk the path), and do not store directory 
+names. By default, zip will store the full path (relative to the current 
+directory).
+
 
 打印文件中的某一列。它智能的去切分你的数据，不管是空格，还是TAB:
 awk '{print $1}' file
