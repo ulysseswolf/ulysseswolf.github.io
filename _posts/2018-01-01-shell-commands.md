@@ -8,6 +8,8 @@ tags: [Linux]
 ---
 {{ page.title }}
 ================
+> 覆盖输出文件   
+>> 在文件末添加   
 
 myfile.txt contains filenames delimited by newline
 ### zip out.zip -@ < myfile.txt   

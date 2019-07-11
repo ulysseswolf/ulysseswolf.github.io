@@ -130,3 +130,43 @@ lprint=lambda *args:sys.stdout.write(" ".join(map(str,args)))
 lprint("python", "tips",1000,1001)
 ##-> python tips 1000 1001
 
+
+get first and last line of a text file   
+{% highlight python %}
+# 1
+with open(fname, 'rb') as fh:
+    #firstline
+    first = next(fh).decode()
+
+    fh.seek(-1024, 2)
+    last = fh.readlines()[-1].decode()
+
+#The variable value here is 1024: it represents the average string length. I choose 1024 only for example. If you have an estimate of average line length you could just use that value times 2.
+
+#Since you have no idea whatsoever about the possible upper bound for the line length, the obvious solution would be to loop over the file:
+
+for line in fh:
+    pass
+last = line
+
+seek(offset[, whence])
+    Change the stream position to the given byte offset. offset is interpreted relative to the position indicated by whence. The default value for whence is SEEK_SET. Values for whence are:
+
+    SEEK_SET or 0 – start of the stream (the default); offset should be zero or positive
+    SEEK_CUR or 1 – current stream position; offset may be negative
+    SEEK_END or 2 – end of the stream; offset is usually negative
+
+    Return the new absolute position.
+# 2
+with open(file, "rb") as f:
+    first = f.readline()        # Read the first line.
+    f.seek(-2, os.SEEK_END)     # Jump to the second last byte.
+    while f.read(1) != b"\n":   # Until EOL is found...
+        f.seek(-2, os.SEEK_CUR) # ...jump back the read byte plus one more.
+    last = f.readline()         # Read last line.
+
+# 3
+import subprocess
+first_line = subprocess.check_output(['head', '-1', file])
+last_line = subprocess.check_output(['tail', '-1', file])
+{% endhighlight %} 
