@@ -4,7 +4,7 @@ title: "Linux stuff"
 description: ""
 categories: 
 - Linux
-tags: [linux]
+tags: [Linux]
 ---
 {{ page.title }}
 ================

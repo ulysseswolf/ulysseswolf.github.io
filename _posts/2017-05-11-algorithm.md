@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Algorithm"
-description: ""
+title: "backtrack"
+description: "backtrack"
 categories: 
-- python
-tags: [python]
+- Algorithm
+tags: [Algorithm]
 ---
 {{ page.title }}
 ================

@@ -3,8 +3,8 @@ layout: post
 title: "Number of 1 bits"
 description: ""
 categories: 
-- python
-tags: [python]
+- Algorithm
+tags: [Algorithm]
 ---
 {{ page.title }}
 ================

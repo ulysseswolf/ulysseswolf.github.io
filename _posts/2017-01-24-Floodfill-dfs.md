@@ -3,8 +3,8 @@ layout: post
 title: "Floodfill漫水填充法"
 description: ""
 categories: 
-- python
-tags: [python]
+- Algorithm
+tags: [Algorithm]
 ---
 {{ page.title }}
 ================
