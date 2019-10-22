@@ -36,7 +36,7 @@ def lcs(S,T):
                 counter[i+1][j+1] = c
                 if c > longest:
                     longest = c
-		endIndex = i + 1
+		    endIndex = i + 1
 
     return S[endIndex-longest:endIndex]
 
