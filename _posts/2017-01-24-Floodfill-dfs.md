@@ -25,16 +25,17 @@ m = [[1,1,1,0,0,0,0,0,1,1],
 #上下左右四个方向
 directions = [(1,0), (-1,0), (0,1), (0,-1)]
 #访问过的坐标
-v = []
+v = [[False for _ in range(10)] for _ in range(10)]
 def dfs(x, y, nums):
     if x == 9 and y == 9:
         print(nums)
         return 
 
+    v[a][b] = True
     for a, b in directions:
         x1 = x + a
         y1 = y + b
-        if 0 <= x1 and x1 < 10 and 0 <= y1 and y1 < 10 and ((x1, y1) not in v):
+        if 0 <= x1 and x1 < 10 and 0 <= y1 and y1 < 10 and not v[a][b]:
             if m[x1][y1] == 1:
                 m[x1][y1] = nums
                 
