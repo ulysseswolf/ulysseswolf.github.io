@@ -10,7 +10,7 @@ tags: [Algorithm]
 ================
 10 * 10矩阵表示地图，0 表示海洋，1 表示陆地，计算独立岛屿   
 
-{% highlight python %}
+```
 m = [[1,1,1,0,0,0,0,0,1,1], 
      [1,0,1,0,1,1,1,0,1,1],
      [1,0,1,0,1,1,1,1,0,1],
@@ -27,10 +27,6 @@ directions = [(1,0), (-1,0), (0,1), (0,-1)]
 #访问过的坐标
 v = [[False for _ in range(10)] for _ in range(10)]
 def dfs(x, y, nums):
-    if x == 9 and y == 9:
-        print(nums)
-        return 
-
     v[a][b] = True
     for a, b in directions:
         x1 = x + a
@@ -49,4 +45,4 @@ for i in range(9):
             nums -= 1
             dfs(i, j, nums)
 print('there are {0} isolated islands'.format(-nums))
-{% endhighlight %}
+```
