@@ -25,8 +25,6 @@ class Solution:
         dfn = [None for i in range(n)]
         low = [None for i in range(n)]
         
-        cur = 0
-        start = 0
         res = []
         self.cur = 0
        
