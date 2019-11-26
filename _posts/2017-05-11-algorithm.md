@@ -18,37 +18,35 @@ from typing import List
 class Solution:
     def criticalConnections(self, n: int, connections: List[List[int]]) -> List[List[int]]:
         graph = defaultdict(list)
-        for v in connections:
-            graph[v[0]].append(v[1])
-            graph[v[1]].append(v[0])
+	for u, v in connections:
+            g[u].append(v)
+            g[v].append(u)
             
-        dfn = [None for i in range(n)]
-        low = [None for i in range(n)]
+        N = len(connections)
+        dfn = [None] * N
+        low = [None] * N
         
-        res = []
-        self.cur = 0
-       
-        def dfs(node,parent):
-            if dfn[node] is None:
-                dfn[node] = self.cur
-                low[node] = self.cur
-                self.cur+=1
-                for n in graph[node]:
-                    if dfn[n] is None:
-                        dfs(n,node)
-                    
-                if parent is not None:
-                    l = min([low[i] for i in graph[node] if i!=parent]+[low[node]])
-                else:
-                    l = min(low[i] for i in graph[node]+[low[node]])
-                low[node] = l
-                
-        dfs(0,None)
+        def dfs(node, parent, level):
+            # already visited
+            if dfn[node] is not None:
+                return 
+            
+            dfn[node] = low[node] = level
+            for neighbor in g[node]:
+                if not dfn[neighbor]:
+                    dfs(neighbor, node, level + 1)
+            
+            # minimal level in the neignbors, exclude the parent
+            cur = min([level] + [low[neighbor] for neighbor in g[node] if neighbor != parent])    
+            low[node] = cur
         
-        for v in connections:
-            if low[v[0]]>dfn[v[1]] or low[v[1]]>dfn[v[0]]:
-                res.append(v)
-        return res
+        dfs(0, None, 0)
+        
+        ans = []
+        for u, v in connections:
+            if low[u] > dfn[v] or low[v] > dfn[u]:
+                ans.append([u, v])
+        return ans
 ```
 
 backtrack   
