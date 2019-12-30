@@ -62,7 +62,7 @@ For example, given n = 3, a solution set is:
 ]
 
 {% highlight python %}
-class Solution(object):
+class Solution:
     def generateParenthesis(self, N):
         ans = []
         def backtrack(S = '', left = 0, right = 0):
@@ -76,6 +76,39 @@ class Solution(object):
 
         backtrack()
         return ans
+
+### https://leetcode.com/problems/subsets/
+from typing import List
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        def backtrack(i, sub):
+	    # If you try the code without use of deepcopy then you would find that every time you change chosen, the res also changes. This is because how python pass parameters and the effect of shallow copy. After appending chosen, res[-1] and chosen reference points to the same memory location. As a result even since you append chosen to res, every time you modify chosen, you also change the element in res.
+	    if i == len(nums):
+	        res.append(sub[:])
+	        return
+	    sub.append(nums[i])
+	    backtrack(i+1, sub)
+	    sub.pop()
+	    backtrack(i+1, sub)
+
+	res = []
+	backtrack(0, [])
+	return res
+
+# solution 2: bit operation
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        allsets = 1 << len(nums)
+	res = []
+	for s in allsets:
+	    sub = []
+	    for idx in range(len(nums)):
+	        n = 1 << idx
+		if s & n:
+		    sub.append(nums[idx])
+
+	    res.append(sub)
+	return res
 {% endhighlight %}
 
 

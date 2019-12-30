@@ -3,7 +3,7 @@ layout: post
 title: "Golang Escape Analysis"
 description: ""
 categories: 
-- Algorithm
+- Golang
 tags: [Golang]
 ---
 {{ page.title }}
