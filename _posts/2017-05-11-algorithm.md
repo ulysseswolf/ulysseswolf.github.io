@@ -9,7 +9,7 @@ tags: [Algorithm]
 {{ page.title }}
 ================
 Tarjan Algorithm (DFS)   
-https://leetcode.com/problems/critical-connections-in-a-network   
+[critical connections in a network](https://leetcode.com/problems/critical-connections-in-a-network)
 In tarjan algorithm, we keep two arrays DFN and LOW in DFS procedure. DFN array records the order of DFS for each node while LOW array records the lowest order of each node's neighbor except its direct parent. Initially, LOW[i] equals to DFN[i].
 After DFS, we find edge(u,v) where DFN(u)<LOW(v) and get the final answers.   
 ```
@@ -100,7 +100,7 @@ class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         allsets = 1 << len(nums)
 	res = []
-	for s in allsets:
+	for s in range(allsets):
 	    sub = []
 	    for idx in range(len(nums)):
 	        n = 1 << idx
@@ -109,8 +109,94 @@ class Solution:
 
 	    res.append(sub)
 	return res
+
 {% endhighlight %}
+# [flatten binary tree to linked list](https://leetcode.com/problems/flatten-binary-tree-to-linked-list)
+If we traverse the flattened tree in the reverse way, we would notice that [6->5->4->3->2->1] is in (right, left, root) order of the original tree. So the reverse order after flattening is post order traversal in (right, left, root) order like [6->5->4->3->2->1].   
 
+The idea is to traverse the original tree in this order by   
+```
+public void flatten(TreeNode root) {
+    if (root == null)
+        return;
+    flatten(root.right);
+    flatten(root.left);
+}
+```
+and then set each node's right pointer as the previous one in [6->5->4->3->2->1], as such the right pointer behaves similar to a link in the flattened tree(though technically, it's still a right child reference from the tree data structure's perspective) and set the left child as null before the end of one recursion by
 
+```
+public void flatten(TreeNode root, TreeNode prev) {
+    if (root == null)
+        return prev;
+    flatten(root.right);
+    flatten(root.left);
+    root.right = prev;
+    root.left = null;
+    prev = root;
+    return prev;
+}
+```
+    1
+   / \
+  2   5
+ / \   \
+3   4   6
+-----------        
+pre = 5
+cur = 4
 
+    1
+   / 
+  2   
+ / \   
+3   4
+     \
+      5
+       \
+        6
+-----------        
+pre = 4
+cur = 3
 
+    1
+   / 
+  2   
+ /   
+3 
+ \
+  4
+   \
+    5
+     \
+      6
+-----------        
+cur = 2
+pre = 3
+
+    1
+   / 
+  2   
+   \
+    3 
+     \
+      4
+       \
+        5
+         \
+          6
+-----------        
+cur = 1
+pre = 2
+
+1
+ \
+  2
+   \
+    3
+     \
+      4
+       \
+        5
+         \
+          6
