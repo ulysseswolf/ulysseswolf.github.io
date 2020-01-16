@@ -3,8 +3,8 @@ layout: post
 title: "System Design"
 description: ""
 categories: 
-- Design
-tags: [Design]
+- design
+tags: [design]
 ---
 {{ page.title }}
 ================
