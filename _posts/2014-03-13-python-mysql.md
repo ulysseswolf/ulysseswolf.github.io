@@ -196,3 +196,26 @@ cursor.execute("UPDATE test_info SET movie_year = %s WHERE movie_name = %s" % ('
 cursor.execute("UPDATE test_info SET movie_year = '%s' WHERE movie_name = '%s'" % (pymysql.escape_string('''20'1(6'''), '盗梦空间'))
 {% endhighlight %}
 　　改完之后记录就被正常更新了，**需要注意，在第二种方法中`%s`需要加上单引号。** 相比较而言，还是第一种方法比较好用。  
+
+
+MySQL中Waiting for table metadata lock的解决方法
+## 1. 查看未提交事务
+从 information_schema.innodb_trx 表中查看当前未提交的事务
+
+select trx_state, trx_started, trx_mysql_thread_id, trx_query from information_schema.innodb_trx\G
+（\G 作为结束符时，MySQL Client 会把结果以列模式展示，对于列比较长的表，展示更直观）
+
+字段意义：
+trx_state: 事务状态，一般为 RUNNING
+trx_started: 事务执行的起始时间，若时间较长，则要分析该事务是否合理
+trx_mysql_thread_id: MySQL 的线程 ID，用于 kill
+trx_query: 事务中的 sql
+一般只要 kill 掉这些线程，DDL 操作就不会 Waiting for table metadata lock。
+
+## 2. 调整锁超时阈值
+lock_wait_timeout 表示获取 metadata lock 的超时（单位为秒），允许的值范围为 1 到 31536000（1 年）。 默认值为 31536000。详见 https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_lock_wait_timeout 。默认值为一年.
+将其调整为 30 分钟
+set session lock_wait_timeout = 1800;
+set global lock_wait_timeout = 1800;
+好让出现该问题时快速故障（failfast）
+
