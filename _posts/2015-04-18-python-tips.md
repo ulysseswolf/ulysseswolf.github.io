@@ -169,4 +169,20 @@ with open(file, "rb") as f:
 import subprocess
 first_line = subprocess.check_output(['head', '-1', file])
 last_line = subprocess.check_output(['tail', '-1', file])
+
+
+
+# 繁体转简体
+# 安装
+# pip install opencc-python-reimplemented
+
+# t2s - 繁体转简体（Traditional Chinese to Simplified Chinese）
+# s2t - 简体转繁体（Simplified Chinese to Traditional Chinese）
+# mix2t - 混合转繁体（Mixed to Traditional Chinese）
+# mix2s - 混合转简体（Mixed to Simplified Chinese）
+
+import opencc
+cc = opencc.OpenCC('t2s')
+s = cc.convert('眾議長與李克強會談')
+print(s)
 {% endhighlight %} 

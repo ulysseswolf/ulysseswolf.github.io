@@ -74,3 +74,7 @@ find all files larger than 20M
 command > /dev/null等价于command 1 > /dev/null   
 0 表示stdin标准输入， 2是标准错误，1是标准输出.
 2>&1 把标准错误重定向到标准输出
+
+
+# extract package to direction:
+tar xzf wiki-js.tar.gz -C ./wiki
