@@ -25,3 +25,9 @@ for (variable of iterable) {
   // code block to be executed
 }
 ```
+
+[javascript scope](https://blog.greenroots.info/javascript-scope-fundamentals-with-tom-and-jerry-ckcq723h4007vkxs18dxa97ae)
+- There is something called, Global Execution Context and Function Execution Context.
+- Each execution context has a special thing called, this and the reference to the Outer Environment.
+- When we invoke a function, the JavaScript engine creates an outer reference for the current Function Execution Context.
+- The function has access to the variables defined in the Outer reference and JavaScript engine does a look-up when it is unable to find it in the current execution context.
