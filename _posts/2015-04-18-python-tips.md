@@ -185,4 +185,51 @@ import opencc
 cc = opencc.OpenCC('t2s')
 s = cc.convert('眾議長與李克強會談')
 print(s)
+
+
+# get first/last day of current year
+from datetime import date
+a = date(date.today().year, 1, 1)
+b = date(date.today().year, 12, 31)
 {% endhighlight %} 
+
+
+
+# openpyxl
+## set column width
+from openpyxl import Workbook
+
+wb = Workbook()
+worksheet = wb.active
+worksheet.column_dimensions['A'].width = 50
+
+wb.save(filename="col_width.xlsx")
+
+
+# flask redis pool
+#Redis-py provides a connection pool for you from which you can retrieve a connection. Connection pools create a set of connections which you can use as needed (and when done - the connection is returned to the connection pool for further reuse). Trying to create connections on the fly without discarding them (i.e. not using a pool or not using the pool correctly) will leave you with way too many connections to redis (until you hit the connection limit).
+
+#You could choose to setup the connection pool in the init method and make the pool global (you can look at other options if uncomfortable with global).
+
+
+redis_pool = None
+
+def init():
+    global redis_pool
+    print("PID %d: initializing redis pool..." % os.getpid())
+    redis_pool = redis.ConnectionPool(host='10.0.0.1', port=6379, db=0)
+#You can then retrieve the connection from a pool like this:
+
+redis_conn = redis.Redis(connection_pool=redis_pool)
+
+
+# dumps python tuple to redis list
+>>> tup1 = ('2011-04-05', 25.2390232323, 0.32093240923490, 25.239502352390)
+>>> import pickle
+>>> r.lpush('9999', pickle.dumps(tup1))
+1L
+>>> v = pickle.loads(r.lpop('9999'))
+>>> v
+('2011-04-05', 25.2390232323, 0.3209324092349, 25.23950235239)
+>>> type(v)
+<type 'tuple'>
