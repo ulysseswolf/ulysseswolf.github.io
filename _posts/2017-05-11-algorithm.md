@@ -8,6 +8,23 @@ tags: [Algorithm]
 ---
 {{ page.title }}
 ================
+Python为了防止栈溢出，递归函数默认有一个maximum recursive depth 1000
+在计算机中，函数调用是通过栈（stack）这种数据结构实现的，每当进入一个函数调用，栈就会加一层栈帧，每当函数返回，栈就会减一层栈帧。由于栈的大小不是无限的，所以，递归调用的次数过多，会导致栈溢出。
+记忆化递归：
+cache = {}    # 定义一个字典，用于存储返回值
+
+def fib(n):
+    if n in cache:
+        return cache[n]
+    # 我们需要将返回值存储起来
+    if n == 1 or n == 2:
+        # 斐波那契数列的第 1 和第 2 项是 1
+        value = 1
+    elif n > 2:
+        value = fib(n - 1) + fib(n - 2)
+    cache[n] = value
+    return value
+
 Tarjan Algorithm (DFS)   
 [critical connections in a network](https://leetcode.com/problems/critical-connections-in-a-network)
 In tarjan algorithm, we keep two arrays DFN and LOW in DFS procedure. DFN array records the order of DFS for each node while LOW array records the lowest order of each node's neighbor except its direct parent. Initially, LOW[i] equals to DFN[i].
@@ -111,6 +128,38 @@ class Solution:
 	return res
 
 {% endhighlight %}
+
+# inorder traversal binary tree:
+### left, root, right
+{% highlight python%}
+def inorder(root):
+    res = []
+    def helper(node):
+        if not node:
+            return
+        helper(node.left)
+        res.append(node.val)
+        helper(node.right)
+
+    helper(root)
+    return res
+
+def inorder(root):
+    res = []
+    stack = []
+    p = root
+    while p or stack:
+        while p.left:
+            stack.append(p.left)
+            p = p.left
+
+        p = stack.pop()
+        res.append(p.val)
+        p = p.right
+
+    return res
+
+{%endhilight%}
 # [flatten binary tree to linked list](https://leetcode.com/problems/flatten-binary-tree-to-linked-list)
 If we traverse the flattened tree in the reverse way, we would notice that [6->5->4->3->2->1] is in (right, left, root) order of the original tree. So the reverse order after flattening is post order traversal in (right, left, root) order like [6->5->4->3->2->1].   
 
