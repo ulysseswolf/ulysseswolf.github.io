@@ -131,7 +131,7 @@ class Solution:
 
 # inorder traversal binary tree:
 ### left, root, right
-{% highlight python%}
+{% highlight python %}
 def inorder(root):
     res = []
     def helper(node):
@@ -159,7 +159,7 @@ def inorder(root):
 
     return res
 
-{%endhilight%}
+{% endhilight %}
 # [flatten binary tree to linked list](https://leetcode.com/problems/flatten-binary-tree-to-linked-list)
 If we traverse the flattened tree in the reverse way, we would notice that [6->5->4->3->2->1] is in (right, left, root) order of the original tree. So the reverse order after flattening is post order traversal in (right, left, root) order like [6->5->4->3->2->1].   
 
