@@ -14,7 +14,7 @@ import yagmail
 yag = yagmail.SMTP(user='abc@163.com', password='nicai?', host='smtp.163.com', port='25')
 yag.send(user, subject = "I now can send an attachment", attachments=['a.txt', 'b.jpg'])
 
-# Click is a Python package for creating command line interfaces
+### Click is a Python package for creating command line interfaces   
 
 import click
 
@@ -30,6 +30,7 @@ def hello(count, name):
 if __name__ == '__main__':
     hello()
 {% endhighlight %}
+
 And what it looks like when run:
 
 $ python hello.py --count=3
@@ -37,4 +38,3 @@ Your name: John
 Hello John!
 Hello John!
 Hello John!
-
