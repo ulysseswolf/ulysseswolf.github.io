@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>电影书籍</title>
+    <title>3元</title>
 
     <style>
         * {
@@ -387,7 +387,7 @@
         .book-card .category-indicator {
             background: var(--book);
         }
-        /* 通知样式 */
+
         .notification {
             position: fixed;
             top: 20px;
@@ -431,10 +431,6 @@
                 <button class="filter-btn" onclick="filterItems('movie')">电影</button>
                 <button class="filter-btn" onclick="filterItems('book')">书籍</button>
                 <button class="filter-btn" onclick="filterByTag('科幻')">科幻</button>
-                <button class="filter-btn" onclick="filterByTag('爱情')">爱情</button>
-                <button class="filter-btn" onclick="filterByTag('悬疑')">悬疑</button>
-                <button class="filter-btn" onclick="filterByTag('经典')">经典</button>
-                <button class="filter-btn" onclick="filterByTag('文学')">文学</button>
             </div>
         </div>
     -->
@@ -549,7 +545,7 @@
                 }
                 card.innerHTML = `
                     <div class="item-image">
-                        <img src="${item.image}" loading="lazy" alt="${item.title}">
+                        <img id="img-${item.id}" src="" alt="${item.title}" loading="lazy">
                         <span class="item-id">${item.id}</span>
                         <span class="category-indicator">${type === 'movie' ? '电影' : '书籍'}</span>
                     </div>
@@ -569,9 +565,34 @@
                 `;
                 
                 container.appendChild(card);
+                loadImageWithFallback(item.id, item.img_url, item.img);
             });
         }
 
+        function loadImageWithFallback(itemId, primarySrc, fallbackSrc) {
+            const imgElement = document.getElementById(`img-${itemId}`);
+            
+            const timeout = setTimeout(() => {
+                if (!imgElement.complete || imgElement.naturalWidth === 0) {
+                    imgElement.src = fallbackSrc;
+                }
+            }, 5000);
+            
+            imgElement.onload = function() {
+                clearTimeout(timeout);
+            };
+            
+            imgElement.onerror = function() {
+                clearTimeout(timeout);
+                imgElement.src = fallbackSrc;
+            };
+            
+            if (primarySrc) {
+                imgElement.src = primarySrc;
+            } else {
+                imgElement.src = fallbackSrc;
+            }
+        }
         function filterByTag(tag) {
             currentTag = tag;
             currentSearchPage = 1;
@@ -610,6 +631,7 @@
             }
             
             const selectedIds = selectedItems.join(', ');
+            /*
             navigator.clipboard.writeText(selectedIds)
                 .then(() => {
                     showNotification(`已复制选中项目编号: ${selectedIds}`);
@@ -618,6 +640,16 @@
                     showNotification("复制失败，请重试");
                     console.error('复制失败:', err);
                 });
+            */
+           const textarea = document.createElement('textarea');
+            textarea.value = selectedIds;
+            textarea.style.position = 'fixed'; 
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            showNotification(`已复制选中项目编号: ${selectedIds}`);
         }
         
         // 显示通知
