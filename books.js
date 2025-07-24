@@ -2,7 +2,7 @@ const books = [
     {
         "id": "b1",
         "title": "蓝色小药丸",
-        "image": "img/books/蓝色小药丸.jpg",
+        "image": "img/books/蓝色小药丸.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 208,
@@ -14,7 +14,7 @@ const books = [
     {
         "id": "b2",
         "title": "香水",
-        "image": "img/books/香水.jpg",
+        "image": "img/books/香水.avif",
         "type": "epub",
         "lan": "简体中文",
         "pages": 272,
@@ -24,7 +24,7 @@ const books = [
     {
         "id": "b3",
         "title": "淑女的眼泪",
-        "image": "img/books/淑女的眼泪.jpg",
+        "image": "img/books/淑女的眼泪.avif",
         "type": "epub",
         "lan": "简体中文",
         "pages": 340,
@@ -34,7 +34,7 @@ const books = [
     {
         "id": "b4",
         "title": "把妹达人圣经",
-        "image": "img/books/把妹达人圣经.jpg",
+        "image": "img/books/把妹达人圣经.avif",
         "type": "epub",
         "lan": "简体中文",
         "pages": 292,
@@ -44,7 +44,7 @@ const books = [
     {
         "id": "b5",
         "title": "月經不平等",
-        "image": "img/books/月經不平等.jpg",
+        "image": "img/books/月經不平等.avif",
         "type": "epub",
         "lan": "繁体中文",
         "pages": 174,
@@ -54,7 +54,7 @@ const books = [
     {
         "id": "b6",
         "title": "老公怎麼還不去死",
-        "image": "img/books/老公怎麼還不去死.jpg",
+        "image": "img/books/老公怎麼還不去死.avif",
         "type": "epub",
         "lan": "繁体中文",
         "pages": 165,
@@ -64,7 +64,7 @@ const books = [
     {
         "id": "b7",
         "title": "莱温斯基自白录",
-        "image": "img/books/莱温斯基自白录.jpg",
+        "image": "img/books/莱温斯基自白录.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 671,
@@ -74,7 +74,7 @@ const books = [
     {
         "id": "b8",
         "title": "女人其實都想要!",
-        "image": "img/books/女人其實都想要!.jpg",
+        "image": "img/books/女人其實都想要!.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 160,
@@ -84,7 +84,7 @@ const books = [
     {
         "id": "b9",
         "title": "极致爱抚1",
-        "image": "img/books/极致爱抚1.jpg",
+        "image": "img/books/极致爱抚1.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 224,
@@ -94,7 +94,7 @@ const books = [
     {
         "id": "b10",
         "title": "极致爱抚2",
-        "image": "img/books/极致爱抚2.jpg",
+        "image": "img/books/极致爱抚2.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 207,
@@ -104,7 +104,7 @@ const books = [
     {
         "id": "b11",
         "title": "體貼性愛祕技",
-        "image": "img/books/體貼性愛祕技.jpg",
+        "image": "img/books/體貼性愛祕技.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 224,
@@ -114,7 +114,7 @@ const books = [
     {
         "id": "b12",
         "title": "男性多重高潮",
-        "image": "img/books/男性多重高潮.jpg",
+        "image": "img/books/男性多重高潮.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 240,
@@ -124,7 +124,7 @@ const books = [
     {
         "id": "b13",
         "title": "圖解天王AV男優清水健萬人斬性愛密技",
-        "image": "img/books/圖解天王AV男優清水健萬人斬性愛密技.jpg",
+        "image": "img/books/圖解天王AV男優清水健萬人斬性愛密技.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 162,
@@ -134,7 +134,7 @@ const books = [
     {
         "id": "b14",
         "title": "完美伴侣缓慢性爱",
-        "image": "img/books/完美伴侣缓慢性爱.jpg",
+        "image": "img/books/完美伴侣缓慢性爱.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 192,
@@ -144,7 +144,7 @@ const books = [
     {
         "id": "b15",
         "title": "男人就愛吃這套!",
-        "image": "img/books/男人就愛吃這套!.jpg",
+        "image": "img/books/男人就愛吃這套!.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 144,
@@ -154,7 +154,7 @@ const books = [
     {
         "id": "b16",
         "title": "給想體驗究極性愛的妳",
-        "image": "img/books/給想體驗究極性愛的妳.jpg",
+        "image": "img/books/給想體驗究極性愛的妳.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 129,
@@ -164,7 +164,7 @@ const books = [
     {
         "id": "b17",
         "title": "性与艺术",
-        "image": "img/books/性与艺术.jpg",
+        "image": "img/books/性与艺术.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 393,
@@ -174,7 +174,7 @@ const books = [
     {
         "id": "b18",
         "title": "情色论",
-        "image": "img/books/情色论.jpg",
+        "image": "img/books/情色论.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 332,
@@ -184,7 +184,7 @@ const books = [
     {
         "id": "b19",
         "title": "性工作",
-        "image": "img/books/性工作.jpg",
+        "image": "img/books/性工作.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 348,
@@ -194,7 +194,7 @@ const books = [
     {
         "id": "b20",
         "title": "樓鳳，性淘金產業大揭密",
-        "image": "img/books/樓鳳，性淘金產業大揭密.jpg",
+        "image": "img/books/樓鳳，性淘金產業大揭密.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 169,
@@ -204,7 +204,7 @@ const books = [
     {
         "id": "b21",
         "title": "和美写美_三上悠亚花魁写真集",
-        "image": "img/books/和美写美_三上悠亚花魁写真集.jpg",
+        "image": "img/books/和美写美_三上悠亚花魁写真集.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 128,
@@ -214,7 +214,7 @@ const books = [
     {
         "id": "b22",
         "title": "SM——一个受虐狂的采访笔记",
-        "image": "img/books/SM——一个受虐狂的采访笔记.jpg",
+        "image": "img/books/SM——一个受虐狂的采访笔记.avif",
         "type": "epub",
         "lan": "简体中文",
         "pages": 150,
@@ -226,7 +226,7 @@ const books = [
     {
         "id": "b23",
         "title": "手槍女王：一個從業職人的真情告白",
-        "image": "img/books/手槍女王：一個從業職人的真情告白.jpg",
+        "image": "img/books/手槍女王：一個從業職人的真情告白.avif",
         "type": "epub",
         "lan": "繁体中文",
         "pages": 247,
@@ -236,7 +236,7 @@ const books = [
     {
         "id": "b24",
         "title": "我要的歡愉你該懂",
-        "image": "img/books/我要的歡愉你該懂.jpg",
+        "image": "img/books/我要的歡愉你該懂.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 272,
@@ -246,7 +246,7 @@ const books = [
     {
         "id": "b25",
         "title": "性本自然",
-        "image": "img/books/性本自然.jpg",
+        "image": "img/books/性本自然.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 245,
@@ -256,7 +256,7 @@ const books = [
     {
         "id": "b26",
         "title": "爽經",
-        "image": "img/books/爽經.jpg",
+        "image": "img/books/爽經.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 304,
@@ -266,7 +266,7 @@ const books = [
     {
         "id": "b27",
         "title": "AV現場",
-        "image": "img/books/AV現場.jpg",
+        "image": "img/books/AV現場.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 204,
@@ -276,7 +276,7 @@ const books = [
     {
         "id": "b28",
         "title": "成人漫畫表現史",
-        "image": "img/books/成人漫畫表現史.jpg",
+        "image": "img/books/成人漫畫表現史.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 392,
@@ -286,7 +286,7 @@ const books = [
     {
         "id": "b29",
         "title": "巨乳研究室",
-        "image": "img/books/巨乳研究室.jpg",
+        "image": "img/books/巨乳研究室.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 157,
@@ -296,7 +296,7 @@ const books = [
     {
         "id": "b30",
         "title": "东京不热",
-        "image": "img/books/东京不热.jpg",
+        "image": "img/books/东京不热.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 240,
@@ -306,7 +306,7 @@ const books = [
     {
         "id": "b31",
         "title": "妓女与文人",
-        "image": "img/books/妓女与文人.jpg",
+        "image": "img/books/妓女与文人.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 199,
@@ -316,7 +316,7 @@ const books = [
     {
         "id": "b32",
         "title": "繩縛本事 ",
-        "image": "img/books/繩縛本事 .jpg",
+        "image": "img/books/繩縛本事 .avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 129,
@@ -326,7 +326,7 @@ const books = [
     {
         "id": "b33",
         "title": "爱经",
-        "image": "img/books/爱经.jpg",
+        "image": "img/books/爱经.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 243,
@@ -336,7 +336,7 @@ const books = [
     {
         "id": "b34",
         "title": "我的身体我的心",
-        "image": "img/books/我的身体我的心.jpg",
+        "image": "img/books/我的身体我的心.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 160,
@@ -348,7 +348,7 @@ const books = [
     {
         "id": "b35",
         "title": "我的身体我的心2",
-        "image": "img/books/我的身体我的心2.jpg",
+        "image": "img/books/我的身体我的心2.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 132,
@@ -360,7 +360,7 @@ const books = [
     {
         "id": "b36",
         "title": "AV春秋",
-        "image": "img/books/AV春秋.jpg",
+        "image": "img/books/AV春秋.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 139,
@@ -370,7 +370,7 @@ const books = [
     {
         "id": "b37",
         "title": "一本书让你快速变身性爱高手",
-        "image": "img/books/一本书让你快速变身性爱高手.jpg",
+        "image": "img/books/一本书让你快速变身性爱高手.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 69,
@@ -380,7 +380,7 @@ const books = [
     {
         "id": "b38",
         "title": "愛．慾 浮世繪",
-        "image": "img/books/愛．慾 浮世繪.jpg",
+        "image": "img/books/愛．慾 浮世繪.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 359,
@@ -390,7 +390,7 @@ const books = [
     {
         "id": "b39",
         "title": "妓史星河",
-        "image": "img/books/妓史星河.jpg",
+        "image": "img/books/妓史星河.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 102,
@@ -400,7 +400,7 @@ const books = [
     {
         "id": "b40",
         "title": "中国娼妓史",
-        "image": "img/books/中国娼妓史.jpg",
+        "image": "img/books/中国娼妓史.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 392,
@@ -410,7 +410,7 @@ const books = [
     {
         "id": "b41",
         "title": "柏拉图式性爱",
-        "image": "img/books/柏拉图式性爱.jpg",
+        "image": "img/books/柏拉图式性爱.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 254,
@@ -420,7 +420,7 @@ const books = [
     {
         "id": "b42",
         "title": "女性的性爱动机：从寻求刺激到企图报复",
-        "image": "img/books/女性的性爱动机：从寻求刺激到企图报复.jpg",
+        "image": "img/books/女性的性爱动机：从寻求刺激到企图报复.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 463,
@@ -430,7 +430,7 @@ const books = [
     {
         "id": "b43",
         "title": "女醫師教你高潮迭起的性愛",
-        "image": "img/books/女醫師教你高潮迭起的性愛.jpg",
+        "image": "img/books/女醫師教你高潮迭起的性愛.avif",
         "type": "pdf",
         "lan": "繁体中文",
         "pages": 133,
@@ -440,7 +440,7 @@ const books = [
     {
         "id": "b44",
         "title": "我的妓女生涯",
-        "image": "img/books/我的妓女生涯.jpg",
+        "image": "img/books/我的妓女生涯.avif",
         "type": "epub",
         "lan": "简体中文",
         "pages": 226,
@@ -450,7 +450,7 @@ const books = [
     {
         "id": "b45",
         "title": "女医检师现身说法教你高潮一直来一直来",
-        "image": "img/books/女医检师现身说法教你高潮一直来一直来.jpg",
+        "image": "img/books/女医检师现身说法教你高潮一直来一直来.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 226,
@@ -460,7 +460,7 @@ const books = [
     {
         "id": "b46",
         "title": "歡場女孩",
-        "image": "img/books/歡場女孩.jpg",
+        "image": "img/books/歡場女孩.avif",
         "type": "epub",
         "lan": "繁体中文",
         "pages": 323,
@@ -470,7 +470,7 @@ const books = [
     {
         "id": "b47",
         "title": "紅線：我的性紀錄",
-        "image": "img/books/紅線：我的性紀錄.jpg",
+        "image": "img/books/紅線：我的性紀錄.avif",
         "type": "epub",
         "lan": "繁体中文",
         "pages": 368,
@@ -480,7 +480,7 @@ const books = [
     {
         "id": "b48",
         "title": "日本AV影像史",
-        "image": "img/books/日本AV影像史.jpg",
+        "image": "img/books/日本AV影像史.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 302,
@@ -490,7 +490,7 @@ const books = [
     {
         "id": "b49",
         "title": "细说伪满妓院",
-        "image": "img/books/细说伪满妓院.jpg",
+        "image": "img/books/细说伪满妓院.avif",
         "type": "pdf",
         "lan": "简体中文",
         "pages": 337,
@@ -500,7 +500,7 @@ const books = [
     {
         "id": "b50",
         "title": "天亮以后说分手_19位都市女性一夜情口述实录",
-        "image": "img/books/天亮以后说分手_19位都市女性一夜情口述实录.jpg",
+        "image": "img/books/天亮以后说分手_19位都市女性一夜情口述实录.avif",
         "type": "epub",
         "lan": "简体中文",
         "pages": 358,
@@ -510,7 +510,7 @@ const books = [
     {
         "id": "b51",
         "title": "AV女优的工作现场",
-        "image": "img/books/AV女优的工作现场.jpg",
+        "image": "img/books/AV女优的工作现场.avif",
         "type": "epub",
         "lan": "简体中文",
         "pages": 148,
@@ -520,7 +520,7 @@ const books = [
     {
         "id": "b52",
         "title": "麻美姐姐教你手放這裡女人會很想要",
-        "image": "img/books/麻美姐姐教你手放這裡女人會很想要.jpg",
+        "image": "img/books/麻美姐姐教你手放這裡女人會很想要.avif",
         "type": "epub",
         "lan": "繁体中文",
         "pages": 87,
@@ -530,7 +530,7 @@ const books = [
     {
         "id": "b53",
         "title": "小恶魔教你极致性爱",
-        "image": "img/books/小恶魔教你极致性爱.jpg",
+        "image": "img/books/小恶魔教你极致性爱.avif",
         "type": "epub",
         "lan": "繁体中文",
         "pages": 174,
@@ -540,7 +540,7 @@ const books = [
     {
         "id": "b54",
         "title": "性之变：21世纪中国人的性生活",
-        "image": "img/books/性之变：21世纪中国人的性生活.jpg",
+        "image": "img/books/性之变：21世纪中国人的性生活.avif",
         "type": "epub",
         "lan": "简体中文",
         "pages": 427,

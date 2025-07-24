@@ -2,7 +2,7 @@ const movies = [
     {
         "id": "m1",
         "title": "D坂杀人事件",
-        "image": "img/D坂杀人事件.jpg",
+        "image": "img/D坂杀人事件.avif",
         "year": 1998,
         "country": "日本",
         "duration": "90分钟",
@@ -16,7 +16,7 @@ const movies = [
     {
         "id": "m2",
         "title": "O娘的故事",
-        "image": "img/O娘的故事.jpg",
+        "image": "img/O娘的故事.avif",
         "year": 1975,
         "country": "法国",
         "duration": "105分钟",
@@ -30,7 +30,7 @@ const movies = [
     {
         "id": "m3",
         "title": "O的故事2",
-        "image": "img/O的故事2.jpg",
+        "image": "img/O的故事2.avif",
         "year": 1984,
         "country": "法国",
         "duration": "95分钟",
@@ -44,7 +44,7 @@ const movies = [
     {
         "id": "m4",
         "title": "O的故事2002",
-        "image": "img/O的故事2002.jpg",
+        "image": "img/O的故事2002.avif",
         "year": " 2002",
         "country": "美国",
         "duration": "98分钟",
@@ -58,7 +58,7 @@ const movies = [
     {
         "id": "m5",
         "title": "SM法官",
-        "image": "img/SM法官.jpg",
+        "image": "img/SM法官.avif",
         "year": 2009,
         "country": "比利时",
         "duration": "84分钟",
@@ -72,7 +72,7 @@ const movies = [
     {
         "id": "m6",
         "title": "不道德的繁荣",
-        "image": "img/不道德的繁荣.jpg",
+        "image": "img/不道德的繁荣.avif",
         "year": " 1988",
         "country": "日本",
         "duration": "95分钟",
@@ -86,7 +86,7 @@ const movies = [
     {
         "id": "m7",
         "title": "全裸监禁",
-        "image": "img/全裸监禁.jpg",
+        "image": "img/全裸监禁.avif",
         "year": 2024,
         "country": "日本",
         "duration": "99分钟",
@@ -100,7 +100,7 @@ const movies = [
     {
         "id": "m8",
         "title": "六月之蛇",
-        "image": "img/六月之蛇.jpg",
+        "image": "img/六月之蛇.avif",
         "year": 2003,
         "country": "日本",
         "duration": "77分钟",
@@ -114,7 +114,7 @@ const movies = [
     {
         "id": "m9",
         "title": "出卖她的肉体",
-        "image": "img/出卖她的肉体.jpg",
+        "image": "img/出卖她的肉体.avif",
         "year": 2017,
         "country": "美国",
         "duration": "101分钟",
@@ -128,7 +128,7 @@ const movies = [
     {
         "id": "m10",
         "title": "十楼的蚊子",
-        "image": "img/十楼的蚊子.jpg",
+        "image": "img/十楼的蚊子.avif",
         "year": 1983,
         "country": "日本",
         "duration": "108分钟",
@@ -142,7 +142,7 @@ const movies = [
     {
         "id": "m11",
         "title": "土耳其狂欢",
-        "image": "img/土耳其狂欢.jpg",
+        "image": "img/土耳其狂欢.avif",
         "year": 1973,
         "country": "荷兰",
         "duration": "108分钟",
@@ -156,7 +156,7 @@ const movies = [
     {
         "id": "m12",
         "title": "堕落东京",
-        "image": "img/堕落东京.jpg",
+        "image": "img/堕落东京.avif",
         "year": 1992,
         "country": "日本",
         "duration": "135分钟",
@@ -170,7 +170,7 @@ const movies = [
     {
         "id": "m13",
         "title": "失踪少女55",
-        "image": "img/失踪少女55.jpg",
+        "image": "img/失踪少女55.avif",
         "year": 2011,
         "country": "日本",
         "duration": "95分钟",
@@ -184,7 +184,7 @@ const movies = [
     {
         "id": "m14",
         "title": "女体铳",
-        "image": "img/女体铳.jpg",
+        "image": "img/女体铳.avif",
         "year": 2014,
         "country": "日本",
         "duration": "86分钟",
@@ -198,7 +198,7 @@ const movies = [
     {
         "id": "m15",
         "title": "性女暴力日记",
-        "image": "img/性女暴力日记.jpg",
+        "image": "img/性女暴力日记.avif",
         "year": 1974,
         "country": "瑞典",
         "duration": "104 分钟",
@@ -212,7 +212,7 @@ const movies = [
     {
         "id": "m16",
         "title": "情事",
-        "image": "img/情事.jpg",
+        "image": "img/情事.avif",
         "year": 2014,
         "country": "韩国",
         "duration": "91分钟",
@@ -226,7 +226,7 @@ const movies = [
     {
         "id": "m17",
         "title": "情妇",
-        "image": "img/情妇.jpg",
+        "image": "img/情妇.avif",
         "year": 1975,
         "country": "法国",
         "duration": "112分钟",
@@ -240,7 +240,7 @@ const movies = [
     {
         "id": "m18",
         "title": "情欲千里难别天",
-        "image": "img/情欲千里难别天.jpg",
+        "image": "img/情欲千里难别天.avif",
         "year": 2004,
         "country": "美国",
         "duration": "98分钟",
@@ -254,7 +254,7 @@ const movies = [
     {
         "id": "m19",
         "title": "情色总动员",
-        "image": "img/情色总动员.jpg",
+        "image": "img/情色总动员.avif",
         "year": 1997,
         "country": "英国",
         "duration": "100分钟",
@@ -268,7 +268,7 @@ const movies = [
     {
         "id": "m20",
         "title": "破碎天空",
-        "image": "img/破碎天空.jpg",
+        "image": "img/破碎天空.avif",
         "year": 2023,
         "country": "菲律宾",
         "duration": "107分钟",
@@ -282,7 +282,7 @@ const movies = [
     {
         "id": "m21",
         "title": "无常",
-        "image": "img/无常.jpg",
+        "image": "img/无常.avif",
         "year": 1970,
         "country": "日本",
         "duration": "143分钟",
@@ -296,7 +296,7 @@ const movies = [
     {
         "id": "m22",
         "title": "早梦",
-        "image": "img/早梦.jpg",
+        "image": "img/早梦.avif",
         "year": 1974,
         "country": "日本",
         "duration": "120分钟",
@@ -310,7 +310,7 @@ const movies = [
     {
         "id": "m23",
         "title": "晚娘",
-        "image": "img/晚娘.jpg",
+        "image": "img/晚娘.avif",
         "year": 2001,
         "country": "泰国",
         "duration": "113分钟",
@@ -324,7 +324,7 @@ const movies = [
     {
         "id": "m24",
         "title": "曼陀罗",
-        "image": "img/曼陀罗.jpg",
+        "image": "img/曼陀罗.avif",
         "year": 1971,
         "country": "日本",
         "duration": "135分钟",
@@ -338,7 +338,7 @@ const movies = [
     {
         "id": "m25",
         "title": "永远的莉莉亚",
-        "image": "img/永远的莉莉亚.jpg",
+        "image": "img/永远的莉莉亚.avif",
         "year": 2002,
         "country": "瑞典",
         "duration": "109分钟",
@@ -352,7 +352,7 @@ const movies = [
     {
         "id": "m26",
         "title": "爱的新世界",
-        "image": "img/爱的新世界.jpg",
+        "image": "img/爱的新世界.avif",
         "year": 1994,
         "country": "日本",
         "duration": "115分钟",
@@ -366,7 +366,7 @@ const movies = [
     {
         "id": "m27",
         "title": "理发店主的悲哀",
-        "image": "img/理发店主的悲哀.jpg",
+        "image": "img/理发店主的悲哀.avif",
         "year": 2002,
         "country": "日本",
         "duration": "97分钟",
@@ -380,7 +380,7 @@ const movies = [
     {
         "id": "m28",
         "title": "甜蜜皮鞭",
-        "image": "img/甜蜜皮鞭.jpg",
+        "image": "img/甜蜜皮鞭.avif",
         "year": 2013,
         "country": "日本",
         "duration": "118分钟",
@@ -394,7 +394,7 @@ const movies = [
     {
         "id": "m29",
         "title": "美姐妹肉奴隶",
-        "image": "img/美姐妹肉奴隶.jpg",
+        "image": "img/美姐妹肉奴隶.avif",
         "year": 1986,
         "country": "日本",
         "duration": "70分钟",
@@ -408,7 +408,7 @@ const movies = [
     {
         "id": "m30",
         "title": "美教师地狱责罚",
-        "image": "img/美教师地狱责罚.jpg",
+        "image": "img/美教师地狱责罚.avif",
         "year": 1985,
         "country": "日本",
         "duration": "67分钟",
@@ -422,7 +422,7 @@ const movies = [
     {
         "id": "m31",
         "title": "花与蛇",
-        "image": "img/花与蛇.jpg",
+        "image": "img/花与蛇.avif",
         "year": 2004,
         "country": "日本",
         "duration": "115分钟",
@@ -436,7 +436,7 @@ const movies = [
     {
         "id": "m32",
         "title": "花与蛇.白衣绳奴隶",
-        "image": "img/花与蛇.白衣绳奴隶.jpg",
+        "image": "img/花与蛇.白衣绳奴隶.avif",
         "year": 1986,
         "country": "日本",
         "duration": "72分钟",
@@ -450,7 +450,7 @@ const movies = [
     {
         "id": "m33",
         "title": "花与蛇2",
-        "image": "img/花与蛇2.jpg",
+        "image": "img/花与蛇2.avif",
         "year": 2005,
         "country": "日本",
         "duration": "113分钟",
@@ -464,7 +464,7 @@ const movies = [
     {
         "id": "m34",
         "title": "花与蛇3",
-        "image": "img/花与蛇3.jpg",
+        "image": "img/花与蛇3.avif",
         "year": 2010,
         "country": "日本",
         "duration": "107分钟",
@@ -478,7 +478,7 @@ const movies = [
     {
         "id": "m35",
         "title": "花与蛇_零",
-        "image": "img/花与蛇_零.jpg",
+        "image": "img/花与蛇_零.avif",
         "year": 2014,
         "country": "日本",
         "duration": "113分钟",
@@ -492,7 +492,7 @@ const movies = [
     {
         "id": "m36",
         "title": "花与蛇地狱篇",
-        "image": "img/花与蛇地狱篇.jpg",
+        "image": "img/花与蛇地狱篇.avif",
         "year": 1985,
         "country": "日本",
         "duration": "69分钟",
@@ -506,7 +506,7 @@ const movies = [
     {
         "id": "m37",
         "title": "萨德侯爵",
-        "image": "img/萨德侯爵.jpg",
+        "image": "img/萨德侯爵.avif",
         "year": 1976,
         "country": "瑞士",
         "duration": "75分钟",
@@ -520,7 +520,7 @@ const movies = [
     {
         "id": "m38",
         "title": "蔷薇的肉体",
-        "image": "img/蔷薇的肉体.jpg",
+        "image": "img/蔷薇的肉体.avif",
         "year": 1978,
         "country": "日本",
         "duration": "72分钟",
@@ -534,7 +534,7 @@ const movies = [
     {
         "id": "m39",
         "title": "做我的奴隶",
-        "image": "img/做我的奴隶.jpg",
+        "image": "img/做我的奴隶.avif",
         "year": 2012,
         "country": "日本",
         "duration": null,
@@ -548,7 +548,7 @@ const movies = [
     {
         "id": "m40",
         "title": "做我的奴隶2",
-        "image": "img/做我的奴隶2.jpg",
+        "image": "img/做我的奴隶2.avif",
         "year": 2018,
         "country": "日本",
         "duration": null,
@@ -562,7 +562,7 @@ const movies = [
     {
         "id": "m41",
         "title": "做我的奴隶3",
-        "image": "img/做我的奴隶3.jpg",
+        "image": "img/做我的奴隶3.avif",
         "year": 2018,
         "country": "日本",
         "duration": "102分钟",
@@ -576,7 +576,7 @@ const movies = [
     {
         "id": "m42",
         "title": "赛琳娜的黄金",
-        "image": "img/赛琳娜的黄金.jpg",
+        "image": "img/赛琳娜的黄金.avif",
         "year": 2022,
         "country": "菲律宾",
         "duration": "113分钟",
@@ -590,7 +590,7 @@ const movies = [
     {
         "id": "m43",
         "title": "雏妓",
-        "image": "img/雏妓.jpg",
+        "image": "img/雏妓.avif",
         "year": 1998,
         "country": "韩国",
         "duration": "105分钟",
@@ -604,7 +604,7 @@ const movies = [
     {
         "id": "m44",
         "title": "风筝",
-        "image": "img/风筝.jpg",
+        "image": "img/风筝.avif",
         "year": 1998,
         "country": "日本",
         "duration": "27分钟",
@@ -618,7 +618,7 @@ const movies = [
     {
         "id": "m45",
         "title": "香水",
-        "image": "img/香水.jpg",
+        "image": "img/香水.avif",
         "year": 2006,
         "country": "德国",
         "duration": "147分钟",
@@ -632,7 +632,7 @@ const movies = [
     {
         "id": "m46",
         "title": "黑暗伊甸园",
-        "image": "img/黑暗伊甸园.jpg",
+        "image": "img/黑暗伊甸园.avif",
         "year": 2012,
         "country": "美国",
         "duration": "98分钟",
@@ -646,7 +646,7 @@ const movies = [
     {
         "id": "m47",
         "title": "千金肉奴隶",
-        "image": "img/千金肉奴隶.jpg",
+        "image": "img/千金肉奴隶.avif",
         "year": 1985,
         "country": "日本",
         "duration": "66分钟",
@@ -660,7 +660,7 @@ const movies = [
     {
         "id": "m48",
         "title": "梦犯",
-        "image": "img/梦犯.jpg",
+        "image": "img/梦犯.avif",
         "year": 1985,
         "country": "日本",
         "duration": "69分钟",
@@ -674,7 +674,7 @@ const movies = [
     {
         "id": "m49",
         "title": "高校教师_成熟",
-        "image": "img/高校教师_成熟.jpg",
+        "image": "img/高校教师_成熟.avif",
         "year": 1985,
         "country": "日本",
         "duration": "69分钟",
@@ -688,7 +688,7 @@ const movies = [
     {
         "id": "m50",
         "title": "勃艮第公爵",
-        "image": "img/勃艮第公爵.jpg",
+        "image": "img/勃艮第公爵.avif",
         "year": 2014,
         "country": "英国",
         "duration": "104分钟",
@@ -702,7 +702,7 @@ const movies = [
     {
         "id": "m51",
         "title": "春潮烂漫海棠红",
-        "image": "img/春潮烂漫海棠红.jpg",
+        "image": "img/春潮烂漫海棠红.avif",
         "year": 1985,
         "country": "美国",
         "duration": "78分钟",
@@ -716,7 +716,7 @@ const movies = [
     {
         "id": "m52",
         "title": "爱恋",
-        "image": "img/爱恋.jpg",
+        "image": "img/爱恋.avif",
         "year": 2015,
         "country": "法国",
         "duration": "135分钟",
@@ -730,7 +730,7 @@ const movies = [
     {
         "id": "m53",
         "title": "女教师3",
-        "image": "img/女教师3.jpg",
+        "image": "img/女教师3.avif",
         "year": 1997,
         "country": "日本",
         "duration": "75分钟",
@@ -744,7 +744,7 @@ const movies = [
     {
         "id": "m54",
         "title": "新堕落东京之奴隶",
-        "image": "img/新堕落东京之奴隶.jpg",
+        "image": "img/新堕落东京之奴隶.avif",
         "year": 2007,
         "country": "日本",
         "duration": "62分钟",
@@ -758,7 +758,7 @@ const movies = [
     {
         "id": "m55",
         "title": "禁止的爱：善良的小姨子",
-        "image": "img/禁止的爱：善良的小姨子.jpg",
+        "image": "img/禁止的爱：善良的小姨子.avif",
         "year": 2015,
         "country": "韩国",
         "duration": "97分钟",
@@ -772,7 +772,7 @@ const movies = [
     {
         "id": "m56",
         "title": "活色生香",
-        "image": "img/活色生香.jpg",
+        "image": "img/活色生香.avif",
         "year": 1997,
         "country": "西班牙/法国",
         "duration": "103分钟",
@@ -786,7 +786,7 @@ const movies = [
     {
         "id": "m57",
         "title": "供品夫人",
-        "image": "img/供品夫人.jpg",
+        "image": "img/供品夫人.avif",
         "year": 1974,
         "country": "日本",
         "duration": "71分钟",
@@ -800,7 +800,7 @@ const movies = [
     {
         "id": "m58",
         "title": "炸天小姐",
-        "image": "img/炸天小姐.jpg",
+        "image": "img/炸天小姐.avif",
         "year": 1983,
         "country": "美国",
         "duration": "79分钟",
@@ -814,7 +814,7 @@ const movies = [
     {
         "id": "m59",
         "title": "绳子和乳房",
-        "image": "img/绳子和乳房.jpg",
+        "image": "img/绳子和乳房.avif",
         "year": 1983,
         "country": "日本",
         "duration": "69分钟",
@@ -828,7 +828,7 @@ const movies = [
     {
         "id": "m60",
         "title": "狗不穿裤子",
-        "image": "img/狗不穿裤子.jpg",
+        "image": "img/狗不穿裤子.avif",
         "year": 2019,
         "country": "芬兰",
         "duration": "106分钟",
@@ -842,7 +842,7 @@ const movies = [
     {
         "id": "m61",
         "title": "一部塞尔维亚电影",
-        "image": "img/一部塞尔维亚电影.jpg",
+        "image": "img/一部塞尔维亚电影.avif",
         "year": 2010,
         "country": "塞尔维亚",
         "duration": "99分钟",
@@ -856,7 +856,7 @@ const movies = [
     {
         "id": "m62",
         "title": "神秘马戏团",
-        "image": "img/神秘马戏团.jpg",
+        "image": "img/神秘马戏团.avif",
         "year": 2005,
         "country": "日本",
         "duration": "108分钟",
@@ -870,7 +870,7 @@ const movies = [
     {
         "id": "m63",
         "title": "切肤之爱",
-        "image": "img/切肤之爱.jpg",
+        "image": "img/切肤之爱.avif",
         "year": 1999,
         "country": "日本",
         "duration": "115分钟",
@@ -884,7 +884,7 @@ const movies = [
     {
         "id": "m64",
         "title": "罗曼史",
-        "image": "img/罗曼史.jpg",
+        "image": "img/罗曼史.avif",
         "year": 1999,
         "country": "法国",
         "duration": "84分钟",
@@ -898,7 +898,7 @@ const movies = [
     {
         "id": "m65",
         "title": "苹果",
-        "image": "img/苹果.jpg",
+        "image": "img/苹果.avif",
         "year": 2007,
         "country": "中国",
         "duration": "112分钟",
@@ -912,7 +912,7 @@ const movies = [
     {
         "id": "m66",
         "title": "不知不觉诱惑你",
-        "image": "img/不知不觉诱惑你.jpg",
+        "image": "img/不知不觉诱惑你.avif",
         "year": 1998,
         "country": "意大利",
         "duration": "105分钟",
@@ -926,7 +926,7 @@ const movies = [
     {
         "id": "m67",
         "title": "布达佩斯小酒馆",
-        "image": "img/布达佩斯小酒馆.jpg",
+        "image": "img/布达佩斯小酒馆.avif",
         "year": 1988,
         "country": "意大利",
         "duration": "98分钟",
@@ -940,7 +940,7 @@ const movies = [
     {
         "id": "m68",
         "title": "欲望之翼",
-        "image": "img/欲望之翼.jpg",
+        "image": "img/欲望之翼.avif",
         "year": 1983,
         "country": "意大利",
         "duration": "116分钟",
@@ -954,7 +954,7 @@ const movies = [
     {
         "id": "m69",
         "title": "激情信箱",
-        "image": "img/激情信箱.jpg",
+        "image": "img/激情信箱.avif",
         "year": 1995,
         "country": "意大利",
         "duration": "81分钟",
@@ -968,7 +968,7 @@ const movies = [
     {
         "id": "m70",
         "title": "爱与激情",
-        "image": "img/爱与激情.jpg",
+        "image": "img/爱与激情.avif",
         "year": 1987,
         "country": "意大利",
         "duration": "98分钟",
@@ -982,7 +982,7 @@ const movies = [
     {
         "id": "m71",
         "title": "米兰达",
-        "image": "img/米兰达.jpg",
+        "image": "img/米兰达.avif",
         "year": 1985,
         "country": "意大利",
         "duration": "93分钟",
@@ -996,7 +996,7 @@ const movies = [
     {
         "id": "m72",
         "title": "红辣椒",
-        "image": "img/红辣椒.jpg",
+        "image": "img/红辣椒.avif",
         "year": 1991,
         "country": "意大利",
         "duration": "99分钟",
@@ -1010,7 +1010,7 @@ const movies = [
     {
         "id": "m73",
         "title": "过错",
-        "image": "img/过错.jpg",
+        "image": "img/过错.avif",
         "year": 2003,
         "country": "意大利",
         "duration": "90分钟",
@@ -1024,7 +1024,7 @@ const movies = [
     {
         "id": "m74",
         "title": "黑天使",
-        "image": "img/黑天使.jpg",
+        "image": "img/黑天使.avif",
         "year": 2002,
         "country": "意大利",
         "duration": "128分钟",
