@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3元</title>
+    <title>三元</title>
 
     <style>
         * {
@@ -576,7 +576,7 @@
                 if (!imgElement.complete || imgElement.naturalWidth === 0) {
                     imgElement.src = fallbackSrc;
                 }
-            }, 5000);
+            }, 2500);
             
             imgElement.onload = function() {
                 clearTimeout(timeout);
@@ -652,7 +652,6 @@
             showNotification(`已复制选中项目编号: ${selectedIds}`);
         }
         
-        // 显示通知
         function showNotification(message) {
             const notification = document.getElementById('notification');
             const notificationText = document.getElementById('notificationText');
@@ -672,7 +671,6 @@
         }
         
         function filterByTag(tag) {
-            // 高亮显示选中的标签按钮
             const filterButtons = document.querySelectorAll('.filter-btn');
             filterButtons.forEach(btn => {
                 if (btn.textContent === tag) {
@@ -685,7 +683,6 @@
             searchItems();
         }
         
-        // 搜索项目
         function searchItems() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
             if (!searchTerm) return;
