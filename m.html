@@ -34,7 +34,6 @@
             background: var(--page-bg);
             color: var(--light);
             line-height: 1.6;
-            padding-bottom: 50px;
         }
         
         .container {
@@ -546,7 +545,7 @@
                 }
                 card.innerHTML = `
                     <div class="item-image">
-                        <img id="img-${item.id}" src="" alt="${item.title}" loading="lazy">
+                        <img id="img-${item.id}" src="" alt="${item.title}">
                         <span class="item-id">${item.id}</span>
                         <span class="category-indicator">${type === 'movie' ? '电影' : '书籍'}</span>
                     </div>
